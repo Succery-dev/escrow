@@ -1,76 +1,46 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import getWeb3 from '../utils/web3'
+import Web3 from 'web3'
 
 const Navbar = () => {
-	const [nav, setNav] = useState(false)
-	const [color, setColor] = useState('transparent')
-	const [textColor, setTextColor] = useState('white')
-
-	const handleNav = () => {
-		setNav(!nav)
-	}
+	const [web3, setWeb3] = useState<typeof Web3 | null>(null)
+	const [account, setAccount] = useState<string | null>(null)
 
 	useEffect(() => {
-		const changeColor = () => {
-			if (window.pageYOffset >= 90) {
-				setColor('#ffffff')
-				setTextColor('#000000')
-			} else {
-				setColor('transparent')
-				setTextColor('#ffffff')
-			}
+		const init = async () => {
+			const web3 = await getWeb3()
+			setWeb3(web3)
 		}
-		window.addEventListener('scroll', changeColor)
+		init()
 	}, [])
 
+	const handleConnectWallet = async () => {
+		if (web3) {
+			try {
+				// Connect to Metamask
+				await web3.currentProvider.enable()
+				console.log('Connected to Metamask')
+
+				// Get accounts
+				const accounts = await web3.eth.getAccounts()
+				setAccount(accounts[0])
+				console.log('Connected to Metamask with account:', accounts[0])
+			} catch (error) {
+				console.log(error)
+			}
+		} else {
+			console.log('Web3 is not initialized')
+		}
+	}
+
 	return (
-		<div style={{backgroundColor: color}} className='fixed left-0 top-0 w-full z-10 ease-in duration-300'>
-			<div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
+		<div className='fixed left-0 top-0 w-full bg-white z-10'>
+			<div className='mx-40 flex justify-between items-center p-4'>
 				<Link href='/'>
-					<h1 style={{color: textColor}} className='font-bold text-4xl'>Capture</h1>
+					<h1 className='font-bold text-4xl'>TransPay</h1>
 				</Link>
-				<ul style={{color: textColor}} className='hidden sm:flex'>
-					<li className='p-4'>
-						<Link href='/'>Home</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/#gallery'>Gallery</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/portfolio'>Work</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='contact'>Contact</Link>
-					</li>
-				</ul>
-
-				{/* Mobile Button */}
-				<div onClick={handleNav} className='block sm:hidden z-10'>
-					{nav ? <AiOutlineClose size={20} style={{color: 'white'}} /> : <AiOutlineMenu size={20} style={{color: textColor}} />}
-				</div>
-				{/* Mobile Menu */}
-				<div className={
-					nav 
-						? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-						: 'sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-				}>
-					<ul>
-						<li className='p-4 text-4xl hover:text-gray-500'>
-							<Link href='/'>Home</Link>
-						</li>
-						<li className='p-4 text-4xl hover:text-gray-500'>
-							<Link href='/#gallery'>Gallery</Link>
-						</li>
-						<li className='p-4 text-4xl hover:text-gray-500'>
-							<Link href='/portfolio'>Work</Link>
-						</li>
-						<li className='p-4 text-4xl hover:text-gray-500'>
-							<Link href='contact'>Contact</Link>
-						</li>
-					</ul>
-				</div>
-
+				<button onClick={handleConnectWallet} className='px-8 py-2 border font-bold bg-gray-200 rounded-lg'>{account ? account : 'Connect Wallet'}</button>
 			</div>
 		</div>
 	)
