@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import Overview from '../components/Overview'
+import Feature from '../components/Feature'
 import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       </Head>
       <Hero heading='Capture Photography' message='I capture moments in nature and keep them alive.'/>
       <Overview />
+      <Feature />
       <Footer />
     </div>
   )
