@@ -25,8 +25,8 @@ const Navbar = () => {
 	return (
 		<div className='fixed left-0 top-0 w-full bg-white z-10'>
 			<div className='mx-40 flex justify-between items-center p-4'>
-				<Link href='/' className='flex items-center'>
-					<Image src={logo} alt='/' height='40' className='mr-3' />
+				<Link href='/' className='flex items-center space-x-4'>
+					<Image src={logo} alt='/' height='40' />
 					<h1 className='font-bold text-4xl'>TransPay</h1>
 				</Link>
 				<button onClick={account ? handleDisconnectWallet : handleConnectWallet} className='px-8 py-2 border font-bold bg-gray-200 rounded-lg'>{account ? `Disconnect Wallet: ${account}` : 'Connect Wallet'}</button>
