@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import getWeb3 from '../utils/web3'
 import logo from '../public/logo.jpg'
 
 const Navbar = () => {
+	const router = useRouter()
 	const [account, setAccount] = useState<string | null>(null)
 
 	const handleConnectWallet = async () => {
@@ -13,14 +15,11 @@ const Navbar = () => {
       const accounts = await web3.eth.getAccounts()
       setAccount(accounts[0])
       console.log('Connected to Metamask with account:', accounts[0])
+			router.push('/create-contract')
     } catch (error) {
       console.error(error)
     }
 	}
-
-	const handleDisconnectWallet = () => {
-    setAccount(null)
-  }
 
 	return (
 		<div className='fixed left-0 top-0 w-full bg-white z-10'>
@@ -29,7 +28,7 @@ const Navbar = () => {
 					<Image src={logo} alt='/' height='40' />
 					<h1 className='font-bold text-4xl'>TransPay</h1>
 				</Link>
-				<button onClick={account ? handleDisconnectWallet : handleConnectWallet} className='px-8 py-2 border font-bold bg-gray-200 rounded-lg'>{account ? `Disconnect Wallet: ${account}` : 'Connect Wallet'}</button>
+				<button onClick={handleConnectWallet} className='px-8 py-2 border font-bold bg-gray-200 rounded-lg'>{account ? account : 'Connect Wallet'}</button>
 			</div>
 		</div>
 	)
