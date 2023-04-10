@@ -6,7 +6,7 @@ import twitter_logo from '../public/twitter-logo.png'
 
 const Footer = () => {
 	return (
-			<div className='mx-40 flex justify-between items-center p-4 h-36'>
+			<div className='px-40 flex justify-between items-center p-4 h-36 bg-white'>
 				<Link href='/' className='flex items-center'>
 					<Image src={logo} alt='/' height='40' className='mr-3' />
 					<h1 className='font-bold text-4xl'>TransPay</h1>
