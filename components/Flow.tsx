@@ -4,8 +4,8 @@ const Flow = () => {
 	const [tab, setTab] = useState('company')
 
 	return (
-		<div className='mx-40 my-20 p-[60px] bg-white rounded-[30px]'>
-			<div className='flex justify-center space-x-20 mb-8'>
+		<div className='mx-40 my-20 p-[60px] bg-white rounded-[30px] space-y-10'>
+			<div className='flex justify-center space-x-20'>
 				<button onClick={() => setTab('company')} style={{color: tab === 'company' ? 'black' : 'grey'}} className='font-bold text-4xl'>Company</button>
 				<button onClick={() => setTab('lancer')} style={{color: tab === 'lancer' ? 'black' : 'grey'}} className='font-bold text-4xl'>Lancer</button>
 			</div>
