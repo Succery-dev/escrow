@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/logo.jpg' />
       </Head>
       <Hero heading='Capture Photography' message='I capture moments in nature and keep them alive.'/>
+      <Footer />
     </div>
   )
 }
