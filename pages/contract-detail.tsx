@@ -7,30 +7,25 @@ const ContractDetail: NextPage = () => {
 				<h1 className='font-bold text-5xl underline'>Contract Detail</h1>
 				<div className='space-y-2'>
 					<h2 className='font-bold text-2xl'>Title</h2>
-          <p className='border-2 border-black rounded-md w-full p-4 text-2xl'>Escrow Smart Contract on Polygon</p>
+					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>An introductory article about TransPay</p>
 				</div>
 				<div className='space-y-2'>
 					<h2 className='font-bold text-2xl'>Detail</h2>
 						<div className='border-2 border-black rounded-md w-full p-4 text-2xl'>
-							<p>Specification</p>
-							<ul className='list-disc list-inside'>
-								<li>Built on Polygon</li>
-								<li>Hold Matic on smart contract in advance</li>
-								<li>Send Matic to lancer's wallet</li>
-							</ul>
+							<p>An introductory article about TransPay, to be published on Medium, and at least 3,000 words long.</p>
 						</div>
 				</div>
 				<div className='space-y-2'>
 					<h2 className='font-bold text-2xl'>Deadline</h2>
-					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>May 1st, 2023</p>
+					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>April 25 , 2023</p>
 				</div>
 				<div className='space-y-2'>
-					<h2 className='font-bold text-2xl'>Reward(MATIC)</h2>
-					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>40</p>
+					<h2 className='font-bold text-2xl'>Reward(USDC)</h2>
+					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>15,000</p>
 				</div>
 				<div className='space-y-2'>
 					<h2 className='font-bold text-2xl'>Lancer's Wallet Address</h2>
-					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>0x29C5C656cb1d5E2cc9148039B5f2c9534849759b</p>
+					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>0x9d53101902859E9a3Ea0a48de3976A2A3326c422</p>
 				</div>
 				<div className='flex justify-center space-x-3'>
 					<button className='border-2 border-black bg-green-300 hover:bg-green-400 drop-shadow-lg rounded-lg px-8 py-3 font-bold'>PREPAY TO ESCROW</button>
