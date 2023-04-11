@@ -21,7 +21,7 @@ const CreateContract: NextPage = () => {
 					<input type="text" className='border-2 border-black rounded-md h-10 w-full p-4 text-2xl' />
 				</div>
 				<div className='space-y-2'>
-					<h2 className='font-bold text-2xl'>Reward(MATIC)</h2>
+					<h2 className='font-bold text-2xl'>Reward(USDC)</h2>
 					<input type="text" className='border-2 border-black rounded-md h-10 w-full p-4 text-2xl' />
 				</div>
 				<div className='space-y-2'>
