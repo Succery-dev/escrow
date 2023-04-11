@@ -24,7 +24,7 @@ const ContractDetail: NextPage = () => {
 					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>15,000</p>
 				</div>
 				<div className='space-y-2'>
-					<h2 className='font-bold text-2xl'>Lancer's Wallet Address</h2>
+					<h2 className='font-bold text-2xl'>{`Lancer's Wallet Address`}</h2>
 					<p className='border-2 border-black rounded-md w-full p-4 text-2xl'>0x9d53101902859E9a3Ea0a48de3976A2A3326c422</p>
 				</div>
 				<div className='flex justify-center space-x-3'>
