@@ -25,7 +25,7 @@ const CreateContract: NextPage = () => {
 					<input type="text" className='border-2 border-black rounded-md h-10 w-full p-4 text-2xl' />
 				</div>
 				<div className='space-y-2'>
-					<h2 className='font-bold text-2xl'>Lancer's Wallet Address</h2>
+					<h2 className='font-bold text-2xl'>{`Lancer's Wallet Address`}</h2>
 					<input type="text" className='border-2 border-black rounded-md h-10 w-full p-4 text-2xl' />
 				</div>
 				<button onClick={() => router.push('/contract-detail')} className='border-2 border-black bg-green-300 hover:bg-green-400 drop-shadow-lg rounded-lg mx-auto px-8 py-3 font-bold'>SUBMIT</button>
