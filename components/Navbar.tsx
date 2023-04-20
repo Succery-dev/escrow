@@ -5,6 +5,7 @@ import Image from 'next/image'
 import getWeb3 from '../utils/web3'
 import logo from '../public/logo.jpg'
 
+
 const Navbar = () => {
 	const router = useRouter()
 	const [account, setAccount] = useState<string | null>(null)
@@ -15,6 +16,14 @@ const Navbar = () => {
       const accounts = await web3.eth.getAccounts()
 			setAccount(accounts[0])
       console.log('Connected to Metamask with account:', accounts[0])
+
+			// Prompt the user to switch to the Mumbai test network
+			const mumbaiNetworkId = '13881';
+			await window.ethereum.request({
+				method: 'wallet_switchEthereumChain',
+				params: [{ chainId: `0x${mumbaiNetworkId}` }],
+			});
+
 			// router.push('/create-contract')
     } catch (error) {
       console.error(error)
