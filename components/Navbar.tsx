@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -13,13 +13,17 @@ const Navbar = () => {
 		try {
 			const web3 = await getWeb3()
       const accounts = await web3.eth.getAccounts()
-      setAccount(accounts[0])
+			setAccount(accounts[0])
       console.log('Connected to Metamask with account:', accounts[0])
-			router.push('/create-contract')
+			// router.push('/create-contract')
     } catch (error) {
       console.error(error)
     }
 	}
+
+	useEffect(() => {
+		handleConnectWallet()
+	}, [])
 
 	return (
 		<div className='fixed left-0 top-0 w-full bg-white z-10'>
