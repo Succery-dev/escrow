@@ -41,7 +41,7 @@ const Footer = (): JSX.Element => {
             <Link href="https://veroo.notion.site/Privacy-Policy-4538184bcaee4835a2dedcc464496cdd" target="_blank" className="p-8">
               Privacy Policy
             </Link>
-            <Link href="https://www.termsandconditionsgenerator.com/live.php?token=n1SBngCYTbesUDM8jjBpq7GPELkmDxry" target="_blank" className="p-8">
+            <Link href="https://veroo.notion.site/Terms-and-Conditions-e56f60533a834abbbd1213c6bf0cd36f" target="_blank" className="p-8">
               Terms & Conditions
             </Link>
             <Link href="/" className="p-8">
