@@ -30,19 +30,19 @@ export const productDescription = [
     id: "DisputeResolution",
     title: "Dispute resolution",
     description:
-      "If there is any disagreement between hiring party and lancers, we will provide dispute resolution",
+      "If there is any disagreement between the hiring party and lancers, we will provide dispute resolution",
   },
   {
     id: "LinkBased",
-    title: "Link based",
+    title: "Link-based",
     description:
-      "Generate direct link of a contract describing project and it’s payment details to share in any platform",
+      "Generate a direct link of a contract describing the project and its payment details to share on any platform",
   },
   {
     id: "SmartContract",
     title: "Smart Contract",
     description:
-      "Qubepay has protocol stored in blockchain. Thus its transparent, trustworthy.No middle man is involved.",
+      "Qubepay has a protocol stored in the blockchain. Thus it's transparent and trustworthy. No middleman is involved.",
   },
 ];
 

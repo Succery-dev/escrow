@@ -8,8 +8,8 @@ const IntroHeaderSection = (): JSX.Element => (
       <div>Freelancers and Organizations</div>
     </h1>
     <h2 className="xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-5xl md:py-4 py-2">
-      <p>Make customized contract with</p>
-      <p>guaranteed payment in web 3</p>
+      <p>Make a customized contract with</p>
+      <p>guaranteed payment in Web3</p>
     </h2>
     <div className=" h-[3px] w-3/4 bg-primary mb-[20px] md:my-8 my-4"></div>
     <CustomButton
@@ -21,7 +21,7 @@ const IntroHeaderSection = (): JSX.Element => (
 
 const IntroFooterSection = (): JSX.Element => (
   <h3 className="xs:text-lg sm:text-xl lg:text-2xl xl:text-3xl md:pt-2 pt-[10%] pb-4">
-    <div>Make hassle free contract and secure</div>
+    <div>Make a hassle-free contract and secure</div>
     <div>
       payment on <span className="pink-to-blue-gradient">QubePay</span> for{" "}
       <span className="pink-to-blue-gradient">FREE*</span>
