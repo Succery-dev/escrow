@@ -33,11 +33,11 @@ const Footer = (): JSX.Element => {
           <Link href="/" className="p-8">
             Privacy Policy
           </Link>
-          <Link href="/" className="p-8">
-            Terms & Condition
+          <Link href="https://www.termsandconditionsgenerator.com/live.php?token=n1SBngCYTbesUDM8jjBpq7GPELkmDxry" target="_blank" className="p-8">
+            Terms & Conditions
           </Link>
           <Link href="/" className="p-8">
-            © 2023 Quickpay org.
+            © 2023 QubePay org.
           </Link>
         </div>
       </div>
