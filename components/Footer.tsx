@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = (): JSX.Element => {
   return (
-    <div className="blue-radial-gradient">
-      <div className="flex flex-row flex-wrap justify-around py-36">
+    <div className="blue-radial-gradient py-10">
+      {/* <div className="flex flex-row flex-wrap justify-around py-36">
         {footerLinks.map((footerSection) => {
           return (
             <div className="flex flex-row" key={footerSection.id}>
@@ -26,12 +26,9 @@ const Footer = (): JSX.Element => {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
-      <div className="flex flex-row flex-wrap-reverse justify-between items-center">
-        <div>
-          <p className="lg:text-lg p-8">*Only for limited time period</p>
-        </div>
+      <div className="flex flex-row flex-wrap-reverse justify-end items-center">
         <div className="lg:text-xl xl:text-2xl">
           <Link href="/" className="p-8">
             Privacy Policy
