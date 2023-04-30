@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const UseCases = (): JSX.Element => {
   return (
-    <div>
+    <div id="use cases">
       <h1 className="text-primary  xs:text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-7xl text-center mt-20">
         Use Cases
       </h1>
