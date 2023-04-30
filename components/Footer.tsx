@@ -33,7 +33,7 @@ const Footer = (): JSX.Element => {
 
       <div className="flex justify-end items-center">
         <div className="lg:text-xl xl:text-2xl flex flex-wrap">
-          <Link href="/" target="_blank" className="p-8 flex items-center gap-2">
+          <Link href="https://twitter.com/0xQubePay" target="_blank" className="p-8 flex items-center gap-2">
             <Image src={twitterLogo} alt="QP-Twitter" height="30" />
             Twitter
           </Link>
