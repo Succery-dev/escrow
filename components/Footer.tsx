@@ -1,6 +1,9 @@
 import React from "react";
 import { footerLinks } from "../constants";
 import Link from "next/link";
+import Image from "next/image";
+
+import twitterLogo from "../public/twitter-logo.png";
 
 const Footer = (): JSX.Element => {
   return (
@@ -28,17 +31,23 @@ const Footer = (): JSX.Element => {
         })}
       </div> */}
 
-      <div className="flex flex-row flex-wrap-reverse justify-end items-center">
-        <div className="lg:text-xl xl:text-2xl">
-          <Link href="/" className="p-8">
-            Privacy Policy
+      <div className="flex justify-end items-center">
+        <div className="lg:text-xl xl:text-2xl flex flex-wrap">
+          <Link href="/" target="_blank" className="p-8 flex items-center gap-2">
+            <Image src={twitterLogo} alt="QP-Twitter" height="30" />
+            Twitter
           </Link>
-          <Link href="https://www.termsandconditionsgenerator.com/live.php?token=n1SBngCYTbesUDM8jjBpq7GPELkmDxry" target="_blank" className="p-8">
-            Terms & Conditions
-          </Link>
-          <Link href="/" className="p-8">
-            © 2023 QubePay org.
-          </Link>
+          <div className="flex flex-wrap">
+            <Link href="/" target="_blank" className="p-8">
+              Privacy Policy
+            </Link>
+            <Link href="https://www.termsandconditionsgenerator.com/live.php?token=n1SBngCYTbesUDM8jjBpq7GPELkmDxry" target="_blank" className="p-8">
+              Terms & Conditions
+            </Link>
+            <Link href="/" className="p-8">
+              © 2023 QubePay org.
+            </Link>
+          </div>
         </div>
       </div>
     </div>
