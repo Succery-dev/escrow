@@ -1,7 +1,6 @@
 import React from "react";
 import { useCases } from "../constants";
 import Image from "next/image";
-import Link from "next/link";
 
 const UseCases = (): JSX.Element => {
   return (
@@ -12,7 +11,7 @@ const UseCases = (): JSX.Element => {
       <div className="flex flex-row justify-around items-center my-20 gap-4">
         {useCases.map((useCase) => {
           return (
-            <Link href="/" className="flex flex-col" key={useCase.id}>
+            <div className="flex flex-col" key={useCase.id}>
               <Image
                 src={useCase.image}
                 alt={useCase.title}
@@ -22,7 +21,7 @@ const UseCases = (): JSX.Element => {
               <p className="xs:text-xl lg:text-3xl xl:text-4xl text-center">
                 {useCase.title}
               </p>
-            </Link>
+            </div>
           );
         })}
       </div>
