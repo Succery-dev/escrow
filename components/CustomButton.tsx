@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const CustomButton = ({
   text,
   styles,
@@ -5,7 +7,11 @@ const CustomButton = ({
   text: string;
   styles: string;
 }): JSX.Element => {
-  return <button className={styles}>{text}</button>;
+  return (
+    <Link href="/" target="_blank">
+      <button className={styles}>{text}</button>
+    </Link>
+  );
 };
 
 export default CustomButton;
