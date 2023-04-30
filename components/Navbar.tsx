@@ -68,7 +68,8 @@ const Navbar = (): JSX.Element => {
       </div>
 
       {/* Connect Button */}
-      <ConnectButton />
+      {/* Temporarily comment this out */}
+      {/* <ConnectButton /> */}
     </nav>
   );
 };
