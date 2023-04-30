@@ -38,7 +38,7 @@ const Footer = (): JSX.Element => {
             Twitter
           </Link>
           <div className="flex flex-wrap">
-            <Link href="/" target="_blank" className="p-8">
+            <Link href="https://veroo.notion.site/Privacy-Policy-4538184bcaee4835a2dedcc464496cdd" target="_blank" className="p-8">
               Privacy Policy
             </Link>
             <Link href="https://www.termsandconditionsgenerator.com/live.php?token=n1SBngCYTbesUDM8jjBpq7GPELkmDxry" target="_blank" className="p-8">
