@@ -31,7 +31,7 @@ const IntroFooterSection = (): JSX.Element => (
 
 const IntroSection = (): JSX.Element => {
   return (
-    <div className="w-full md:h-screen max-h-[1084px] bg-black-200 flex flex-col justify-around items-center font-semibold mb-20">
+    <div className="w-full md:h-screen max-h-[1084px] flex flex-col justify-around items-center font-semibold mb-20 bg-gradient-to-tr from-white to-blue-300">
       <IntroHeaderSection />
       <IntroFooterSection />
     </div>
