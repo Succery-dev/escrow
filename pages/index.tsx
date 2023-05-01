@@ -20,9 +20,6 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <IntroSection />
-      <div>
-        <div className=" w-4/5 max-w-[700px] h-[500px] mx-auto bg-black-200 shadow-card mt-20"></div>
-      </div>
       <ProductDescription />
       <div id="demo">
         <div className="w-full bg-black-200 pb-20">
