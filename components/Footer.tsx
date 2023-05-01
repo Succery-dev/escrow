@@ -1,24 +1,57 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import logo from '../public/logo.jpg'
-import twitter_logo from '../public/twitter-logo.png'
+import React from "react";
+import { footerLinks } from "../constants";
+import Link from "next/link";
+import Image from "next/image";
 
-const Footer = () => {
-	return (
-			<div className='px-40 flex justify-between items-center p-4 h-36 bg-white'>
-				<Link href='/' className='flex items-center space-x-4'>
-					<Image src={logo} alt='/' height='40' />
-					<h1 className='font-bold text-4xl'>TransPay</h1>
-				</Link>
-				<div className='flex items-center space-x-10'>
-					<p>Stay in touch</p>
-					<Link href='https://twitter.com/TTranspay001'>
-						<Image alt='/' src={twitter_logo} height='40' />
-					</Link>
-				</div>
-			</div>
-	)
-}
+import twitterLogo from "../public/twitter-logo.png";
 
-export default Footer
+const Footer = (): JSX.Element => {
+  return (
+    <div className="blue-radial-gradient py-10">
+      {/* <div className="flex flex-row flex-wrap justify-around py-36">
+        {footerLinks.map((footerSection) => {
+          return (
+            <div className="flex flex-row" key={footerSection.id}>
+              <div>
+                <h3 className="text-primary xs:text-xl lg:text-3xl xl:text-4xl font-extrabold mb-8">
+                  {footerSection.title}
+                </h3>
+                <ul className="list-none flex flex-col gap-4 xs:text-xl lg:text-3xl xl:text-4xl">
+                  {footerSection.links.map((footerLink, index) => {
+                    return (
+                      <li key={`${footerSection.title}-${footerLink}`}>
+                        <Link href="/">{footerLink}</Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
+      </div> */}
+
+      <div className="flex justify-end items-center">
+        <div className="lg:text-xl xl:text-2xl flex flex-wrap">
+          <Link href="https://twitter.com/0xQubePay" target="_blank" className="p-8 flex items-center gap-2">
+            <Image src={twitterLogo} alt="QP-Twitter" height="30" />
+            Twitter
+          </Link>
+          <div className="flex flex-wrap">
+            <Link href="https://veroo.notion.site/Privacy-Policy-4538184bcaee4835a2dedcc464496cdd" target="_blank" className="p-8">
+              Privacy Policy
+            </Link>
+            <Link href="https://veroo.notion.site/Terms-and-Conditions-e56f60533a834abbbd1213c6bf0cd36f" target="_blank" className="p-8">
+              Terms & Conditions
+            </Link>
+            <Link href="/" className="p-8">
+              © 2023 QubePay org.
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
