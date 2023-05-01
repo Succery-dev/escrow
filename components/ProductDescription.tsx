@@ -5,7 +5,7 @@ import { productDescription } from "../constants";
 
 const ProductDescription = (): JSX.Element => {
   return (
-    <div>
+    <div id="product">
       <h1 className="text-primary xs:text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-7xl text-center mt-20">
         Product
       </h1>

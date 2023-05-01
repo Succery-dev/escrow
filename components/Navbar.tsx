@@ -5,7 +5,7 @@ import { NextComponentType } from "next";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import logo from "../public/temporaryLogo.png";
+import logo from "../public/logo.png";
 
 import arrowDown from "../assets/arrowDown.svg";
 
@@ -30,7 +30,7 @@ const Navbar = (): JSX.Element => {
               key={link.id}
               className={`lg:text-lg font-medium cursor-pointer`}
             >
-              <Link href={`${link.id}`}>
+              <Link href={`#${link.id}`}>
                 <p>
                   {link.title}
                   <Image
@@ -58,7 +58,7 @@ const Navbar = (): JSX.Element => {
                 key={link.id}
                 className={`text-lg font-medium cursor-pointer`}
               >
-                <Link href={`${link.id}`}>
+                <Link href={`#${link.id}`}>
                   <p>{link.title}</p>
                 </Link>
               </li>
@@ -68,7 +68,8 @@ const Navbar = (): JSX.Element => {
       </div>
 
       {/* Connect Button */}
-      <ConnectButton />
+      {/* Temporarily comment this out */}
+      {/* <ConnectButton /> */}
     </nav>
   );
 };
