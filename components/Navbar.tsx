@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { NextComponentType } from "next";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -68,8 +67,7 @@ const Navbar = (): JSX.Element => {
       </div>
 
       {/* Connect Button */}
-      {/* Temporarily comment this out */}
-      {/* <ConnectButton /> */}
+      <ConnectButton />
     </nav>
   );
 };
