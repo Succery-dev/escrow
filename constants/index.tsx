@@ -20,10 +20,10 @@ export const navLinks = [
     id: "uses",
     title: "Uses",
   },
-  {
-    id: "demo",
-    title: "Demo",
-  },
+  // {
+  //   id: "demo",
+  //   title: "Demo",
+  // },
 ];
 
 export const currentSystemProblems: ProblemsInterface[] = [
