@@ -1,5 +1,8 @@
 import React from "react";
 import CustomButton from "./CustomButton";
+import Image from "next/image";
+
+import whatIf from "../public/what-if.jpg"
 
 const IntroHeaderSection = (): JSX.Element => (
   <div className="pt-[10%]">
@@ -31,9 +34,10 @@ const IntroFooterSection = (): JSX.Element => (
 
 const IntroSection = (): JSX.Element => {
   return (
-    <div className="w-full md:h-screen max-h-[1084px] flex flex-col justify-around items-center font-semibold mb-20 bg-gradient-to-tr from-white to-blue-300">
+    <div className="w-full flex flex-col justify-around items-center font-semibold mb-20 bg-gradient-to-tr from-white to-blue-300">
       <IntroHeaderSection />
       <IntroFooterSection />
+      <Image src={whatIf} alt="what if" height={800} className="my-10"></Image>
     </div>
   );
 };
