@@ -1,37 +1,77 @@
-import React, { useState } from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Image from 'next/image'
-import getWeb3 from '../utils/web3'
-import logo from '../public/logo.jpg'
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { NextComponentType } from "next";
 
-const Navbar = () => {
-	const router = useRouter()
-	const [account, setAccount] = useState<string | null>(null)
+import { styles } from "../styles";
+import { navLinks } from "../constants";
+import logo from "../public/logo.png";
 
-	const handleConnectWallet = async () => {
-		try {
-			const web3 = await getWeb3()
-      const accounts = await web3.eth.getAccounts()
-      setAccount(accounts[0])
-      console.log('Connected to Metamask with account:', accounts[0])
-			router.push('/create-contract')
-    } catch (error) {
-      console.error(error)
-    }
-	}
+import arrowDown from "../assets/arrowDown.svg";
 
-	return (
-		<div className='fixed left-0 top-0 w-full bg-white z-10'>
-			<div className='mx-40 flex justify-between items-center p-4'>
-				<Link href='/' className='flex items-center space-x-4'>
-					<Image src={logo} alt='/' height='40' />
-					<h1 className='font-bold text-4xl'>TransPay</h1>
-				</Link>
-				<button onClick={handleConnectWallet} className='px-8 py-2 border font-bold bg-gray-200 rounded-lg'>{account ? account : 'Connect Wallet'}</button>
-			</div>
-		</div>
-	)
-}
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-export default Navbar
+const Navbar = (): JSX.Element => {
+  return (
+    <nav
+      className={`${styles.paddingX} w-full flex items-center py-5 z-20 cursor-pointer justify-around`}
+    >
+      {/* Logo/Icon */}
+      <Link href="/" className="flex items-center gap-2">
+        <Image src={logo} alt="QP" height="30" />
+        <h1 className="text-gray-800 font-bold text-[18px] block">QubePay</h1>
+      </Link>
+
+      {/* Navbar Links */}
+      <ul className="list-none hidden lg:flex flex-row md:gap-6 lg:gap-16">
+        {navLinks.map((link) => {
+          return (
+            <li
+              key={link.id}
+              className={`lg:text-lg font-medium cursor-pointer`}
+            >
+              <Link href={`#${link.id}`}>
+                <p>
+                  {link.title}
+                  <Image
+                    src={arrowDown}
+                    alt="▼"
+                    height={9}
+                    className="inline ml-2"
+                  />
+                </p>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* Small/Medium Devices Navbar */}
+      <div
+        className="fixed bg-primary text-white shadow-card z-99 bottom-0 w-full border-t-black-100 border-[1px]"
+        style={{ boxShadow: "gray 0px 2px 10px 2px" }}
+      >
+        <ul className="w-full h-14 list-none flex lg:hidden flex-row justify-around items-center md:gap-6 lg:gap-16">
+          {navLinks.map((link) => {
+            return (
+              <li
+                key={link.id}
+                className={`text-lg font-medium cursor-pointer`}
+              >
+                <Link href={`#${link.id}`}>
+                  <p>{link.title}</p>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* Connect Button */}
+      {/* Temporarily comment this out */}
+      {/* <ConnectButton /> */}
+    </nav>
+  );
+};
+
+export default Navbar;
