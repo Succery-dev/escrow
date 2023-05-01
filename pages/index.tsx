@@ -21,14 +21,14 @@ const Home: NextPage = () => {
       <Navbar />
       <IntroSection />
       <ProductDescription />
-      <div id="demo">
+      {/* <div id="demo">
         <div className="w-full bg-black-200 pb-20">
           <h1 className="text-primary xs:text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-7xl text-center py-20">
             How it works
           </h1>
           <div className="bg-white rounded-lg shadow-card w-4/5 max-w-[700px] h-[500px] mx-auto"></div>
         </div>
-      </div>
+      </div> */}
       <UseCases />
       <Footer />
     </div>

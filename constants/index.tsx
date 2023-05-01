@@ -13,10 +13,10 @@ export const navLinks = [
     id: "use cases",
     title: "Use Cases",
   },
-  {
-    id: "demo",
-    title: "Demo",
-  },
+  // {
+  //   id: "demo",
+  //   title: "Demo",
+  // },
 ];
 
 export const productDescription = [
