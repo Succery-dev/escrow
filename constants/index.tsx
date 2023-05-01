@@ -54,7 +54,7 @@ export const useCases = [
   },
   {
     id: "nftMarketing",
-    title: "Nft Marketing",
+    title: "NFT Marketing",
     image: nftMarketing,
   },
   {
