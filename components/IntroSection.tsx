@@ -16,7 +16,7 @@ const IntroHeaderSection = (): JSX.Element => (
     </h2>
     <div className=" h-[3px] w-3/4 bg-primary mb-[20px] md:my-8 my-4"></div>
     <CustomButton
-      text="Get Started"
+      text="Join Waitlist"
       styles="border-none xs:text-lg sm:text-xl lg:text-2xl text-white bg-primary md:px-8 md:py-4 px-4 py-2 rounded-full"
     />
   </div>
