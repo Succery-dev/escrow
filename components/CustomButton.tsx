@@ -8,7 +8,7 @@ const CustomButton = ({
   styles: string;
 }): JSX.Element => {
   return (
-    <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfFZ5KKZsIOjBRVVDsgkv2YNdhK9nG4nhc5ojgJj2Gf47qs9w/viewform" target="_blank">
+    <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfe3r7ia_OTCHU8tHEtNG_aPY6OpLDsLPl3RDj-wQLutXNTKg/viewform" target="_blank">
       <button className={styles}>{text}</button>
     </Link>
   );
