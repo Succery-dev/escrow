@@ -26,13 +26,13 @@ Chartjs.register(
   Tooltip
 );
 
-let totalAmount: number = 0;
-
 const LineChart = ({
   mockData,
 }: {
   mockData: ProjectDetailsInterface[];
 }): JSX.Element => {
+  let totalAmount: number = 0;
+
   const data: LineDataType = mockData.reduce(
     (accumulator: LineDataType, current: ProjectDetailsInterface) => {
       if (!accumulator.labels) {
@@ -51,6 +51,7 @@ const LineChart = ({
       accumulator.datasets[0].data?.push(current.amount);
 
       totalAmount += current.amount;
+      console.log(totalAmount);
 
       return accumulator;
     },
