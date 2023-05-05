@@ -5,6 +5,7 @@ import Card from "./Card";
 import UseCases from "./UseCases";
 import Footer from "./Footer";
 import CustomButton from "./CustomButton";
+import { DoughnutChart, LineChart } from "./charts/index";
 
 export {
   Navbar,
@@ -14,4 +15,6 @@ export {
   UseCases,
   Footer,
   CustomButton,
+  DoughnutChart,
+  LineChart,
 };
