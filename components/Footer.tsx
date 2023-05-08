@@ -1,50 +1,45 @@
 import React from "react";
-import { footerLinks } from "../constants";
 import Link from "next/link";
+import Image from "next/image";
 
-const Footer = (): JSX.Element => {
+// Image Imports
+import { TwitterIcon } from "../assets";
+
+// Content Imports
+import { footerLinks } from "../constants";
+
+const FooterSocial = (): JSX.Element => {
   return (
-    <div className="blue-radial-gradient">
-      <div className="flex flex-row flex-wrap justify-around py-36">
-        {footerLinks.map((footerSection) => {
-          return (
-            <div className="flex flex-row" key={footerSection.id}>
-              <div>
-                <h3 className="text-primary xs:text-xl lg:text-3xl xl:text-4xl font-extrabold mb-8">
-                  {footerSection.title}
-                </h3>
-                <ul className="list-none flex flex-col gap-4 xs:text-xl lg:text-3xl xl:text-4xl">
-                  {footerSection.links.map((footerLink, index) => {
-                    return (
-                      <li key={`${footerSection.title}-${footerLink}`}>
-                        <Link href="/">{footerLink}</Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+    <Link
+      href="https://twitter.com/0xQubePay"
+      className="flex flex-row items-center gap-4"
+    >
+      <Image src={TwitterIcon} alt="Twitter" height={30} />
+      <p>Twitter</p>
+    </Link>
+  );
+};
 
-      <div className="flex flex-row flex-wrap-reverse justify-between items-center">
-        <div>
-          <p className="lg:text-lg p-8">*Only for limited time period</p>
-        </div>
-        <div className="lg:text-xl xl:text-2xl">
-          <Link href="/" className="p-8">
-            Privacy Policy
+const FooterLegal = (): JSX.Element => {
+  return (
+    <div className="flex flex-row items-center gap-8">
+      {footerLinks.map((footerLink, index) => {
+        return (
+          <Link href={footerLink.link} key={footerLink.id}>
+            <p>{footerLink.title}</p>
           </Link>
-          <Link href="/" className="p-8">
-            Terms & Condition
-          </Link>
-          <Link href="/" className="p-8">
-            © 2023 Quickpay org.
-          </Link>
-        </div>
-      </div>
+        );
+      })}
     </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className=" pt-48 pb-24 flex flex-row justify-between items-center col-start-2 col-end-12 text-xl">
+      <FooterSocial />
+      <FooterLegal />
+    </footer>
   );
 };
 
