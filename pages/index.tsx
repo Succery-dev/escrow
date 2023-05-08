@@ -16,7 +16,7 @@ import {
 import { aesthetics } from "../constants";
 
 // Inteface Imports
-import { SectionWrapperPropsInterface } from "../interfaces/SectionWrapper";
+import { SectionWrapperPropsInterface } from "../interfaces/sectionWrapper";
 
 const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
   children,
