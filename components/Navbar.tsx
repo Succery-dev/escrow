@@ -43,7 +43,6 @@ const Navbar = (): JSX.Element => {
           })}
         </ul>
 
-<<<<<<< HEAD
         {/* Small/Medium Devices Navbar */}
         <div
           className="fixed bg-primary text-white shadow-card z-99 bottom-0 w-full border-t-black-100 border-[1px]"
@@ -68,11 +67,6 @@ const Navbar = (): JSX.Element => {
         {/* Connect Button */}
         {/* <ConnectButton /> */}
       </div>
-=======
-      {/* Connect Button */}
-      {/* Temporarily comment this out */}
-      {/* <ConnectButton /> */}
->>>>>>> ee48e44 (Temporarily comment out the wallet-connect button)
     </nav>
   );
 };
