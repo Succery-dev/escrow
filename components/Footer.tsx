@@ -13,6 +13,7 @@ const FooterSocial = (): JSX.Element => {
     <Link
       href="https://twitter.com/0xQubePay"
       className="flex flex-row items-center gap-4"
+      target="_blank"
     >
       <Image src={TwitterIcon} alt="Twitter" height={30} />
       <p>Twitter</p>
@@ -25,7 +26,7 @@ const FooterLegal = (): JSX.Element => {
     <div className="flex flex-row items-center gap-8">
       {footerLinks.map((footerLink, index) => {
         return (
-          <Link href={footerLink.link} key={footerLink.id}>
+          <Link href={footerLink.link} key={footerLink.id} target={footerLink.id != "2023_QubePay_org" ? "_blank" : ""}>
             <p>{footerLink.title}</p>
           </Link>
         );
