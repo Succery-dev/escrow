@@ -49,7 +49,7 @@ const DemoVideo = (): JSX.Element => {
 
 const Walkthrough = (): JSX.Element => {
   return (
-    <>
+    <div id="walkthrough">
       <h1 className=" text-7xl font-extrabold">
         User-Friendly <br /> and Secure
       </h1>
@@ -65,7 +65,7 @@ const Walkthrough = (): JSX.Element => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
