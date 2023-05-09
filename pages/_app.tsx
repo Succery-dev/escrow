@@ -1,3 +1,4 @@
+import React from 'react';
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   RainbowKitProvider,

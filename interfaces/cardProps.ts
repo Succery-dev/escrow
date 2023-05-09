@@ -1,5 +1,7 @@
-export default interface cardPropsInterface {
+interface cardPropsInterface {
   key?: string;
   title: string;
   description?: string;
 }
+
+export type { cardPropsInterface };
