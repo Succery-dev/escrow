@@ -6,7 +6,7 @@ import { features } from "../../constants";
 
 const Features = () => {
   return (
-    <>
+    <div id="features">
       <h1 className=" text-7xl font-extrabold">Features</h1>
       <div className="grid grid-cols-2 gap-16 place-items-center mt-24">
         {features.map((feature, index) => {
@@ -31,7 +31,7 @@ const Features = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

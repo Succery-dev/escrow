@@ -27,7 +27,7 @@ const Navbar = (): JSX.Element => {
                 key={link.id}
                 className={`lg:text-xl font-medium cursor-pointer`}
               >
-                <Link href={`${link.id}`}>
+                <Link href={`#${link.id}`}>
                   <p>
                     {link.title}
                     <Image
@@ -55,7 +55,7 @@ const Navbar = (): JSX.Element => {
                   key={link.id}
                   className={`text-lg font-medium cursor-pointer`}
                 >
-                  <Link href={`${link.id}`}>
+                  <Link href={`#${link.id}`}>
                     <p>{link.title}</p>
                   </Link>
                 </li>

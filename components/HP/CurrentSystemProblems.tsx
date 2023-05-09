@@ -33,7 +33,7 @@ const CurrentSystemProblemsCard = ({
 
 const CurrentSystemProblems = (): JSX.Element => {
   return (
-    <>
+    <div id="product">
       <h1 className=" text-7xl font-extrabold">Why QubePay</h1>
       <div className="flex flex-row justify-between mt-32">
         {currentSystemProblems.map(
@@ -42,7 +42,7 @@ const CurrentSystemProblems = (): JSX.Element => {
           }
         )}
       </div>
-    </>
+    </div>
   );
 };
 

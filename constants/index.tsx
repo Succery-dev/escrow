@@ -17,13 +17,13 @@ export const navLinks = [
     title: "Product",
   },
   {
-    id: "uses",
-    title: "Uses",
+    id: "walkthrough",
+    title: "Walkthrough",
   },
-  // {
-  //   id: "demo",
-  //   title: "Demo",
-  // },
+  {
+    id: "features",
+    title: "Features",
+  },
 ];
 
 export const currentSystemProblems: ProblemsInterface[] = [
