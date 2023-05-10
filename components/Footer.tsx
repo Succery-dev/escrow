@@ -8,6 +8,10 @@ import { TwitterIcon } from "../assets";
 // Content Imports
 import { footerLinks } from "../constants";
 
+// Framer-Motion Imports
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/motion";
+
 const FooterSocial = (): JSX.Element => {
   return (
     <Link
@@ -23,10 +27,14 @@ const FooterSocial = (): JSX.Element => {
 
 const FooterLegal = (): JSX.Element => {
   return (
-    <div className="flex flex-row items-center gap-8">
+    <div className="flex sm:flex-row flex-col sm:items-center sm:gap-8 gap-16">
       {footerLinks.map((footerLink, index) => {
         return (
-          <Link href={footerLink.link} key={footerLink.id} target={footerLink.id != "2023_QubePay_org" ? "_blank" : ""}>
+          <Link
+            href={footerLink.link}
+            key={footerLink.id}
+            target={footerLink.id != "2023_QubePay_org" ? "_blank" : ""}
+          >
             <p>{footerLink.title}</p>
           </Link>
         );
@@ -37,10 +45,16 @@ const FooterLegal = (): JSX.Element => {
 
 const Footer = () => {
   return (
-    <footer className=" pt-48 pb-24 flex flex-row justify-between items-center col-start-2 col-end-12 text-xl">
+    <motion.footer
+      variants={fadeIn("up", 1.25)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      className=" sm:pt-48 sm:pb-24 pt-36 pb-12  flex sm:flex-row flex-col sm:justify-between sm:items-center sm:gap-0 gap-16 col-start-2 col-end-12 xl:text-xl lg:text-lg sm:text-sm text-xl font-medium"
+    >
       <FooterSocial />
       <FooterLegal />
-    </footer>
+    </motion.footer>
   );
 };
 

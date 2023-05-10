@@ -5,6 +5,10 @@ import Image from "next/image";
 // Custom Component Imports
 import { Glow } from "../aesthetics";
 
+// Framer-Motion Imports
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../../utils/motion";
+
 // Content Imports
 import { currentSystemProblems } from "../../constants";
 import { aesthetics } from "../../constants";
@@ -14,31 +18,62 @@ import { ProblemsInterface } from "../../interfaces/currentSystemProblems";
 
 const CurrentSystemProblemsCard = ({
   problem,
+  index,
 }: {
   problem: ProblemsInterface;
+  index: number;
 }): JSX.Element => {
   return (
-    <div className=" basis-[28%] flex flex-col gap-8" key={problem.id}>
+    <motion.div
+      variants={fadeIn("right", 1.25, index)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      className=" sm:basis-[28%] flex flex-col sm:items-start items-center gap-8 sm:py-0 py-16"
+      key={problem.id}
+    >
       <div className="relative">
         <Glow styles={aesthetics.glow.currentSystemProblemsStyles} />
-        <Image height={200} src={problem.image} alt="70%" />
+        <Image
+          src={problem.image}
+          alt="70%"
+          className="xl:h-[200px] lg:h-[150px] sm:h-[100px] h-[150px]"
+        />
       </div>
-      <p className="font-extrabold text-3xl grow">{problem.description.main}</p>
+      <p className="font-extrabold xl:text-3xl lg:text-2xl sm:text-xl text-xl grow sm:w-full w-2/3">
+        {problem.description.main}
+      </p>
       <Link href="/">
-        <p className="font-normal text-xl">{problem.description.footer}</p>
+        <p className="font-normal xl:text-xl lg:text-lg md:text-sm">
+          {problem.description.footer}
+        </p>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
 const CurrentSystemProblems = (): JSX.Element => {
   return (
     <div id="product">
-      <h1 className=" text-7xl font-extrabold">Why QubePay</h1>
-      <div className="flex flex-row justify-between mt-32">
+      <motion.h1
+        variants={textVariant()}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+        className=" xl:text-7xl lg:text-6xl md:text-4xl sm:text-4xl text-4xl font-extrabold"
+      >
+        Why QubePay
+      </motion.h1>
+      <div className="sm:flex sm:flex-row justify-between lg:mt-32 sm:mt-16">
         {currentSystemProblems.map(
           (problem: ProblemsInterface, index: number) => {
-            return <CurrentSystemProblemsCard problem={problem} key={index} />;
+            return (
+              <CurrentSystemProblemsCard
+                problem={problem}
+                index={index}
+                key={index}
+              />
+            );
           }
         )}
       </div>
