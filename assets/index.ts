@@ -1,5 +1,5 @@
 import arrow from "./arrow.svg";
-import logo from "./temporaryLogo.png";
+import logo from "./Logo.png";
 import Ellipse70 from "./Ellipse-70.svg";
 import DollarDownArrow from "./DollarDownArrow.svg";
 import Ellipse25_17 from "./Ellipse-25-17.svg";
