@@ -95,7 +95,7 @@ const Navbar = (): JSX.Element => {
                               key={link.id}
                               className="text-xl font-semibold w-full"
                             >
-                              <Link href={`#Mobile-${link.id}`}>
+                              <Link href={`#${link.id}`}>
                                 <p className="w-full flex flex-row justify-between items-center">
                                   {link.title}
                                   <Image
