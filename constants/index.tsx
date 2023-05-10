@@ -128,26 +128,154 @@ export const footerLinks = [
   },
 ];
 
+// export const aesthetics = {
+//   glow: {
+//     introSectionGlowStyles: [
+//       "bg-[#2563EB] top-[13%] right-[7%] w-[153px] h-[153px] blur-[150px]",
+//       "bg-[#00FFFF] top-[55%] right-[17%] w-[153px] h-[153px] blur-[150px]",
+//       "bg-[#2563EB] bottom-[9%] left-[5%] w-[153px] h-[153px] blur-[150px]",
+//     ],
+//     currentSystemProblemsStyles: [
+//       "bg-[#2563EB] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  w-[153px] h-[153px] blur-[150px]",
+//     ],
+//     walkthroughGlowStyles: [
+//       "bg-[#00FFFF] w-[306px] h-[306px] blur-[300px] top-[25%] -left-[5%]",
+//       "bg-[#00FFFF] w-[306px] h-[306px] blur-[300px] top-[50%] right-0",
+//       "bg-[#2563EB] w-[306px] h-[306px] blur-[300px] top-[60%] left-1/2",
+//     ],
+//     featuresGlowStyles: [
+//       "bg-[#00FFFF] w-[90px] h-[90px] blur-[300px] top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2",
+//       "bg-[#00FFFF] w-[90px] h-[90px] blur-[300px] top-[56%] left-1/2 -translate-x-1/2 -translate-y-1/2",
+//       "bg-[#2563EB] w-[180px] h-[180px] blur-[300px] top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2",
+//       "bg-[#2563EB] w-[180px] h-[180px] blur-[300px] top-[57%] left-1/2 -translate-x-1/2 -translate-y-1/2",
+//     ],
+//   },
+// };
+
 export const aesthetics = {
   glow: {
     introSectionGlowStyles: [
-      "bg-[#2563EB] top-[13%] right-[7%] w-[153px] h-[153px] blur-[150px]",
-      "bg-[#00FFFF] top-[55%] right-[17%] w-[153px] h-[153px] blur-[150px]",
-      "bg-[#2563EB] bottom-[9%] left-[5%] w-[153px] h-[153px] blur-[150px]",
+      {
+        backgroundColor: "#2563EB",
+        top: "25%",
+        right: "13%",
+        width: "153px",
+        height: "153px",
+        filter: "blur(150px)",
+      },
+
+      {
+        backgroundColor: "#2563EB",
+        bottom: "17%",
+        left: "14%",
+        width: "153px",
+        height: "153px",
+        filter: "blur(150px)",
+      },
+      {
+        backgroundColor: "#00FFFF",
+        top: "55%",
+        right: "20%",
+        width: "153px",
+        height: "153px",
+        filter: "blur(150px)",
+      },
     ],
+
     currentSystemProblemsStyles: [
-      "bg-[#2563EB] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  w-[153px] h-[153px] blur-[150px]",
+      {
+        backgroundColor: "#2563EB",
+        top: "50%",
+        left: "50%",
+        width: "153px",
+        height: "153px",
+        filter: "blur(150px)",
+        transform: "translate(-50%, -50%)",
+      },
     ],
+
     walkthroughGlowStyles: [
-      "bg-[#00FFFF] w-[306px] h-[306px] blur-[300px] top-[25%] -left-[5%]",
-      "bg-[#00FFFF] w-[306px] h-[306px] blur-[300px] top-[50%] right-0",
-      "bg-[#2563EB] w-[306px] h-[306px] blur-[300px] top-[60%] left-1/2",
+      {
+        backgroundColor: "#00FFFF",
+        top: "25%",
+        left: "-5%",
+        width: "200px",
+        height: "200px",
+        filter: "blur(200px)",
+      },
+      {
+        backgroundColor: "#00FFFF",
+        top: "50%",
+        right: "0%",
+        width: "200px",
+        height: "200px",
+        filter: "blur(200px)",
+      },
+      {
+        backgroundColor: "#2563EB",
+        top: "60%",
+        left: "50%",
+        width: "200px",
+        height: "200px",
+        filter: "blur(200px)",
+      },
     ],
+
     featuresGlowStyles: [
-      "bg-[#00FFFF] w-[90px] h-[90px] blur-[300px] top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-      "bg-[#00FFFF] w-[90px] h-[90px] blur-[300px] top-[56%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-      "bg-[#2563EB] w-[180px] h-[180px] blur-[300px] top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-      "bg-[#2563EB] w-[180px] h-[180px] blur-[300px] top-[57%] left-1/2 -translate-x-1/2 -translate-y-1/2",
+      {
+        backgroundColor: "#00FFFF",
+        top: "50%",
+        left: "50%",
+        width: "90px",
+        height: "90px",
+        filter: "blur(300px)",
+        transform: "translate(-50%, -50%)",
+      },
+      {
+        backgroundColor: "#00FFFF",
+        top: "52%",
+        left: "50%",
+        width: "90px",
+        height: "90px",
+        filter: "blur(300px)",
+        transform: "translate(-50%, -50%)",
+      },
+      {
+        backgroundColor: "#2563EB",
+        top: "49%",
+        left: "50%",
+        width: "200px",
+        height: "200px",
+        filter: "blur(300px)",
+        transform: "translate(-50%, -50%)",
+      },
+      {
+        backgroundColor: "#2563EB",
+        top: "53%",
+        left: "50%",
+        width: "200px",
+        height: "200px",
+        filter: "blur(300px)",
+        transform: "translate(-50%, -50%)",
+      },
+    ],
+    mobileNavbar: [
+      {
+        backgroundColor: "#2563EB",
+        bottom: "0%",
+        left: "0%",
+        width: "100px",
+        height: "100px",
+        filter: "blur(125px)",
+      },
+      {
+        backgroundColor: "#00FFFF",
+        top: "0%",
+        right: "0%",
+        width: "100px",
+        height: "100px",
+        filter: "blur(125px)",
+      },
     ],
   },
 };

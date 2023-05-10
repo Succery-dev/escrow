@@ -12,6 +12,9 @@ import {
   Glow,
 } from "../components";
 
+// Framer-Motion Imports
+import { motion } from "framer-motion";
+
 // Content Imports
 import { aesthetics } from "../constants";
 
@@ -24,14 +27,14 @@ const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
   glowStyles,
 }): JSX.Element => {
   return (
-    <div
-      className={`w-full grid grid-cols-12 ${bgColor} py-20 overflow-hidden relative min-h-[1024px]`}
+    <motion.div
+      className={`w-full grid grid-cols-12 ${bgColor} xl:py-20 sm:py-14 py-14 overflow-hidden relative xl:min-h-[1024px] lg:min-h-[760px] sm:min-h-[500px] min-h-screen`}
     >
       {glowStyles && <Glow styles={glowStyles} />}
       <div className="col-start-2 col-end-12 font-semibold relative">
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -40,7 +43,10 @@ const Home: NextPage = () => {
     <div className="font-nunito text-secondary">
       <Head>
         <title>QubePay</title>
-        <meta name="description" content="Empowering relation between Freelancers and Organizations" />
+        <meta
+          name="description"
+          content="Empowering relation between Freelancers and Organizations"
+        />
         <link rel="icon" href="/logo.png" />
       </Head>
       <Navbar />

@@ -1,14 +1,23 @@
 import React from "react";
 
-const Glow = ({ styles }: { styles: string[] }) => {
+// Framer-Motion Imports
+import { motion } from "framer-motion";
+import { glowVariant } from "../../utils/motion";
+
+const Glow = ({ styles }: { styles: object[] }) => {
   return (
     <>
       {styles.map((glowStyle, index) => {
         return (
-          <div
-            className={`absolute ${glowStyle}`}
+          <motion.div
+            variants={glowVariant()}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            className="absolute"
+            style={glowStyle}
             key={`${glowStyle}-${index}`}
-          ></div>
+          ></motion.div>
         );
       })}
     </>
