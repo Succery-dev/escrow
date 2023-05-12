@@ -9,6 +9,8 @@ import JuryIcon from "./Jury-Icon.svg";
 import LinkIcon from "./Link-Icon.svg";
 import SmartContractIcon from "./Smartcontract-Icon.svg";
 import TwitterIcon from "./Twitter-Icon.svg";
+import MenuIcon from "./Icon-Hamburger-Menu.svg";
+import CrossIcon from "./Icon-Cross.svg";
 
 export {
   arrow,
@@ -22,4 +24,6 @@ export {
   LinkIcon,
   SmartContractIcon,
   TwitterIcon,
+  MenuIcon,
+  CrossIcon,
 };
