@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#3E8EEC",
+        primary: "#2563EB",
+        secondary: "#F1F1F1",
+        bg_primary: "#050816",
         "black-100": "#5F6F77",
         "black-200": "#D9D9D9",
       },
@@ -17,6 +19,9 @@ module.exports = {
       },
       screens: {
         xs: "450px",
+      },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
       },
     },
   },
