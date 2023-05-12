@@ -43,36 +43,10 @@ const Navbar = (): JSX.Element => {
           })}
         </ul>
 
-<<<<<<< HEAD
-        {/* Small/Medium Devices Navbar */}
-        <div
-          className="fixed bg-primary text-white shadow-card z-99 bottom-0 w-full border-t-black-100 border-[1px]"
-          style={{ boxShadow: "gray 0px 2px 10px 2px" }}
-        >
-          <ul className="w-full h-14 list-none flex lg:hidden flex-row justify-around items-center md:gap-6">
-            {navLinks.map((link) => {
-              return (
-                <li
-                  key={link.id}
-                  className={`text-lg font-medium cursor-pointer`}
-                >
-                  <Link href={`${link.id}`}>
-                    <p>{link.title}</p>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
         {/* Connect Button */}
+        {/* Temporarily comment this out */}
         {/* <ConnectButton /> */}
       </div>
-=======
-      {/* Connect Button */}
-      {/* Temporarily comment this out */}
-      {/* <ConnectButton /> */}
->>>>>>> ee48e44 (Temporarily comment out the wallet-connect button)
     </nav>
   );
 };
