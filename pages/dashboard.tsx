@@ -10,7 +10,7 @@ import { mockData, projectDetailsInterfaceKeys } from "../constants/mock-data";
 
 import { ProjectDetailsInterface } from "../interfaces/temporaryProjectDetailsInterface";
 
-import arrowDown from "../assets/arrowDown.svg";
+import arrowDown from "../assets/arrow.svg";
 
 import { convertSeconds } from "../utils/index";
 import { ProjectDataInterface } from "../interfaces/temporaryProjectDataInterface";
