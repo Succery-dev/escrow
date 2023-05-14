@@ -52,7 +52,7 @@ const DemoVideo = (): JSX.Element => {
       className="xl:w-1/2 lg:w-[85%] lg:p-[3px] p-[2px] grid place-items-center green-transparent-blue-gradient rounded-lg"
     >
       <video autoPlay loop controls className="rounded-lg w-full">
-        <source src="/videos/temporaryDemo.mp4" type="video/mp4" />
+        <source src="/videos/demo.mp4" type="video/mp4" />
       </video>
     </motion.div>
   );
