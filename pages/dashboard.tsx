@@ -1,122 +1,45 @@
+import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
-import React from "react";
-import Image from "next/image";
 
-import { useEffect, useState } from "react";
+// Custom Components Imports
+import {
+  DoughnutChart,
+  LineChart,
+  Navbar,
+  CustomButton,
+  Glow,
+  Table,
+} from "../components";
 
-import { DoughnutChart, LineChart, Navbar, CustomButton } from "../components";
-import { mockData, projectDetailsInterfaceKeys } from "../constants/mock-data";
+// Constants Imports
+import { mockData } from "../constants/mock-data";
+import { aesthetics, chartColors } from "../constants";
 
-import { ProjectDetailsInterface } from "../interfaces/temporaryProjectDetailsInterface";
+// Interfaces Imports
+import {
+  ProjectDataInterface,
+  SectionWrapperPropsInterface,
+} from "../interfaces";
 
-import arrowDown from "../assets/arrow.svg";
+// Framer-Motion Imports
+import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
-import { convertSeconds } from "../utils/index";
-import { ProjectDataInterface } from "../interfaces/temporaryProjectDataInterface";
-
-const TableHeader = (): JSX.Element => {
-  return (
-    <div className="grid grid-cols-4 bg-primary text-white font-semibold items-center rounded-t-lg min-h-[60px] xs:text-base text-sm">
-      {projectDetailsInterfaceKeys.map((keyName: string, index) => {
-        return (
-          <p className="lg:mx-5 sm:mx-3 mx-1" key={`table-heading-${keyName}`}>
-            {keyName.toUpperCase()}
-          </p>
-        );
-      })}
-    </div>
-  );
-};
-
-const TableContents = ({
-  mockData,
-}: {
-  mockData: ProjectDataInterface;
+const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
+  children,
+  bgColor,
+  glowStyles,
 }): JSX.Element => {
   return (
-    <div>
-      {mockData.data.map((project: ProjectDetailsInterface, index: number) => {
-        return (
-          <div
-            className="grid grid-cols-4 items-center border-[1px] border-[#CFCFCF] min-h-[60px] xs:text-base text-xs cursor-pointer hover:bg-primary hover:bg-opacity-10"
-            key={`${project.project}`}
-          >
-            {Object.keys(project).map((projectKey, index) => {
-              return (
-                <p
-                  className="lg:mx-5 sm:mx-3 mx-1"
-                  key={`table-data-${projectKey}-${index}`}
-                >
-                  <span
-                    className={`${
-                      projectKey === "amount" ? "inline" : "hidden"
-                    }`}
-                  >
-                    ${" "}
-                  </span>
-                  {projectKey === "deadline"
-                    ? convertSeconds(project.deadline)
-                    : project[projectKey as keyof typeof project]}
-                </p>
-              );
-            })}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-const TableFooter = ({
-  mockData,
-}: {
-  mockData: ProjectDataInterface;
-}): JSX.Element => {
-  const [currentPage, setCurrentPage] = useState(mockData.page);
-
-  const pageElements = [];
-  for (let i = 0; i < Math.ceil(mockData.total / mockData.per_page); i++) {
-    pageElements.push(
-      <div
-        className={`bg-white grid place-content-center w-8 h-8 rounded-sm border-[1px] border-[#cfcfcf] cursor-pointer ${
-          currentPage === i + 1 ? "text-primary" : "text-black"
-        }`}
-        key={`table-footer-page-${i + 1}`}
-        onClick={() => setCurrentPage(i + 1)}
-      >
-        {i + 1}
+    <motion.div
+      className={`w-full grid grid-cols-12 ${bgColor} xl:py-20 sm:py-14 py-14 overflow-hidden relative xl:min-h-[1024px] lg:min-h-[760px] sm:min-h-[500px] min-h-screen`}
+    >
+      {glowStyles && <Glow styles={glowStyles} />}
+      <div className="col-start-2 col-end-12 font-semibold relative">
+        {children}
       </div>
-    );
-  }
-
-  return (
-    <div className="flex flex-row gap-2 justify-center bg-primary text-black font-semibold items-center rounded-b-lg min-h-[60px]">
-      {/* Previous Button */}
-      <div className="bg-white grid place-content-center w-8 h-8 rounded-sm border-[1px] border-[#cfcfcf] rotate-90">
-        <Image src={arrowDown} alt="▼" height={9} />
-      </div>
-      {/* Pages */}
-      {pageElements}
-      {/* Next Button */}
-      <div className="bg-white grid place-content-center w-8 h-8 rounded-sm border-[1px] border-[#cfcfcf] rotate-[-90deg]">
-        <Image src={arrowDown} alt="▼" height={9} />
-      </div>
-    </div>
-  );
-};
-
-const Table = ({
-  mockData,
-}: {
-  mockData: ProjectDataInterface;
-}): JSX.Element => {
-  return (
-    <div className="xs:col-start-2 xs:col-end-12 col-start-1 col-end-13 xs:mx-0 mx-[12px] my-8 bg-primary bg-opacity-10 rounded-lg shadow-card grid grid-rows-10">
-      <TableHeader />
-      <TableContents mockData={mockData} />
-      <TableFooter mockData={mockData} />
-    </div>
+    </motion.div>
   );
 };
 
@@ -132,7 +55,7 @@ const dashboard: NextPage = () => {
   }
 
   return (
-    <div>
+    <div className="font-nunito text-secondary">
       <Head>
         <title>QubePay</title>
         <meta
@@ -142,28 +65,53 @@ const dashboard: NextPage = () => {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <Navbar />
+      {/* Navbar */}
+      <Navbar showConnectBtn={true} showNavLinks={false} />
 
-      <div className="grid grid-cols-12 gap-1 pb-12">
-        {/* Heading and Charts */}
-        <div className="col-start-2 col-end-12">
-          {/* Heading */}
-          <div className="flex flex-row gap-28 items-center py-12 pb-6">
-            <h1 className="font-extrabold text-4xl">Active Projects</h1>
-            <CustomButton
-              text="+ Create"
-              styles="bg-primary text-xl rounded-md text-center text-white md:px-6 md:py-3"
-            />
+      {/* Dashboard Section */}
+      <SectionWrapper
+        bgColor="bg-bg_primary"
+        glowStyles={aesthetics.glow.dashboardGlowStyles}
+      >
+        <div className="grid grid-cols-12 gap-1 pb-12">
+          {/* Heading and Charts */}
+          <div className="lg:col-start-2 lg:col-end-12 col-start-1 col-end-13">
+            {/* Heading */}
+            <div className="flex flex-row xs:gap-28 gap-8 items-center xs:justify-normal justify-between py-12 pb-6">
+              <motion.h1
+                variants={textVariant()}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.25 }}
+                className="xl:text-6xl lg:text-5xl md:text-3xl sm:text-3xl text-3xl font-extrabold"
+              >
+                Active Projects
+              </motion.h1>
+              <CustomButton
+                text="+ Create"
+                styles="bg-[#3E8ECC] lg:text-2xl sm:text-lg rounded-md text-center text-white px-3 py-2 md:px-6 md:py-3"
+              />
+            </div>
+            {/* Charts */}
+            <div className="flex sm:flex-row flex-col gap-8 w-full">
+              {data.data?.length > 0 && (
+                <DoughnutChart mockData={data.data} chartColors={chartColors} />
+              )}
+              {data.data?.length > 0 && <LineChart mockData={data.data} />}
+            </div>
           </div>
-          {/* Charts */}
-          <div className="flex sm:flex-row flex-col gap-8 w-full">
-            {data.data?.length > 0 && <DoughnutChart mockData={data.data} />}
-            {data.data?.length > 0 && <LineChart mockData={data.data} />}
-          </div>
+          {/* Table */}
+          <motion.div
+            variants={fadeIn("bottom", 0.4)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            className="lg:col-start-2 lg:col-end-12 col-start-1 col-end-13 my-8 bg-black rounded-lg xs:grid grid-rows-10 lg:p-[3px] p-[2px] blue-transparent-green-gradient-vertical"
+          >
+            {data.data?.length > 0 && <Table mockData={data} />}
+          </motion.div>
         </div>
-        {/* Table */}
-        {data.data?.length > 0 && <Table mockData={data} />}
-      </div>
+      </SectionWrapper>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CustomButton from "./CustomButton";
-import { DoughnutChart, LineChart } from "./charts/index";
 
 // Aesthetic Imports
 import { Glow } from "./aesthetics";
@@ -14,6 +13,8 @@ import {
   CurrentSystemProblems,
 } from "./HP";
 
+import { DoughnutChart, LineChart, Table } from "./dashboard";
+
 export {
   Navbar,
   IntroSection,
@@ -25,4 +26,5 @@ export {
   DoughnutChart,
   LineChart,
   Glow,
+  Table,
 };

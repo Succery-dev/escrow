@@ -1,3 +1,4 @@
 import { convertSeconds } from "./convertSeconds";
+import { getLineChartConfig, getDoughnutChartConfig } from "./dashboard/charts";
 
-export { convertSeconds };
+export { convertSeconds, getLineChartConfig, getDoughnutChartConfig };

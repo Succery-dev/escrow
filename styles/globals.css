@@ -33,6 +33,15 @@ html {
   );
 }
 
+.green-transparent-blue-gradient-vertical {
+  background: linear-gradient(
+    180deg,
+    #00ffff 0%,
+    transparent 50%,
+    #2563eb 100%
+  );
+}
+
 .green-transparent-blue-gradient {
   background: linear-gradient(
     135deg,

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   RainbowKitProvider,
   Theme,
-  lightTheme,
   connectorsForWallets,
+  darkTheme,
 } from "@rainbow-me/rainbowkit";
 import {
   rainbowWallet,
@@ -55,9 +55,13 @@ const wagmiClient = createClient({
   provider,
 });
 
-const customWalletTheme: Theme = merge(lightTheme(), {
+const customWalletTheme: Theme = merge(darkTheme(), {
   colors: {
     accentColor: "#3E8EEC",
+    connectButtonBackground: "black",
+    connectButtonBackgroundError: "black",
+    connectButtonInnerBackground: "black",
+    modalBackground: "black",
   },
 } as Theme);
 

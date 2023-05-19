@@ -1,6 +1,6 @@
-import { StatusEnum } from "../enums/ProjectStatus";
-import { ProjectDetailsInterface } from "../interfaces/temporaryProjectDetailsInterface";
-import { ProjectDataInterface } from "../interfaces/temporaryProjectDataInterface";
+import { StatusEnum } from "../enums/dashboard/ProjectStatus";
+import { ProjectDetailsInterface } from "../interfaces/dashboard/temporaryProjectDetailsInterface";
+import { ProjectDataInterface } from "../interfaces/dashboard/temporaryProjectDataInterface";
 
 const mockData: ProjectDataInterface = {
   total: 50,
@@ -70,13 +70,4 @@ const mockData: ProjectDataInterface = {
   ],
 };
 
-type ProjectDetailsInterfaceKeysType = (keyof ProjectDetailsInterface)[];
-
-const projectDetailsInterfaceKeys: ProjectDetailsInterfaceKeysType = [
-  "project",
-  "deadline",
-  "amount",
-  "status",
-];
-
-export { mockData, StatusEnum, projectDetailsInterfaceKeys };
+export { mockData, StatusEnum };

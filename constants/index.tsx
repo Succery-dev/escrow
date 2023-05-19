@@ -8,8 +8,10 @@ import {
   SmartContractIcon,
 } from "../assets";
 
-import { WalthroughInterface } from "../interfaces/walkthrough";
-import { ProblemsInterface } from "../interfaces/currentSystemProblems";
+import { WalthroughInterface } from "../interfaces/HP/walkthrough";
+import { ProblemsInterface } from "../interfaces/HP/currentSystemProblems";
+import { FeatureInterface } from "../interfaces/HP/featuresInteface";
+import { ProjectDetailsInterfaceKeysType } from "../types";
 
 export const navLinks = [
   {
@@ -79,7 +81,7 @@ export const walkthrough: WalthroughInterface[] = [
   },
 ];
 
-export const features = [
+export const features: FeatureInterface[] = [
   {
     id: "Escrow",
     title: "Escrow",
@@ -127,30 +129,6 @@ export const footerLinks = [
     link: "/",
   },
 ];
-
-// export const aesthetics = {
-//   glow: {
-//     introSectionGlowStyles: [
-//       "bg-[#2563EB] top-[13%] right-[7%] w-[153px] h-[153px] blur-[150px]",
-//       "bg-[#00FFFF] top-[55%] right-[17%] w-[153px] h-[153px] blur-[150px]",
-//       "bg-[#2563EB] bottom-[9%] left-[5%] w-[153px] h-[153px] blur-[150px]",
-//     ],
-//     currentSystemProblemsStyles: [
-//       "bg-[#2563EB] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  w-[153px] h-[153px] blur-[150px]",
-//     ],
-//     walkthroughGlowStyles: [
-//       "bg-[#00FFFF] w-[306px] h-[306px] blur-[300px] top-[25%] -left-[5%]",
-//       "bg-[#00FFFF] w-[306px] h-[306px] blur-[300px] top-[50%] right-0",
-//       "bg-[#2563EB] w-[306px] h-[306px] blur-[300px] top-[60%] left-1/2",
-//     ],
-//     featuresGlowStyles: [
-//       "bg-[#00FFFF] w-[90px] h-[90px] blur-[300px] top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-//       "bg-[#00FFFF] w-[90px] h-[90px] blur-[300px] top-[56%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-//       "bg-[#2563EB] w-[180px] h-[180px] blur-[300px] top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-//       "bg-[#2563EB] w-[180px] h-[180px] blur-[300px] top-[57%] left-1/2 -translate-x-1/2 -translate-y-1/2",
-//     ],
-//   },
-// };
 
 export const aesthetics = {
   glow: {
@@ -259,7 +237,7 @@ export const aesthetics = {
         transform: "translate(-50%, -50%)",
       },
     ],
-    mobileNavbar: [
+    mobileNavbarGlowStyles: [
       {
         backgroundColor: "#2563EB",
         bottom: "0%",
@@ -277,5 +255,38 @@ export const aesthetics = {
         filter: "blur(125px)",
       },
     ],
+    dashboardGlowStyles: [
+      {
+        backgroundColor: "#00FFFF",
+        bottom: "10%",
+        left: "45%",
+        width: "500px",
+        height: "500px",
+        filter: "blur(500px)",
+      },
+      {
+        backgroundColor: "#2563EB",
+        top: "5%",
+        right: "55%",
+        width: "500px",
+        height: "500px",
+        filter: "blur(500px)",
+      },
+    ],
   },
 };
+
+export const chartColors: string[] = [
+  "#3E8EEC",
+  "#FFAD4E",
+  "#F1FF4E",
+  "#91FF4E",
+  "#FF634E",
+];
+
+export const projectDetailsInterfaceKeys: ProjectDetailsInterfaceKeysType = [
+  "project",
+  "deadline",
+  "amount",
+  "status",
+];

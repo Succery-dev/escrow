@@ -1,4 +1,4 @@
-import { StatusEnum } from "../enums/ProjectStatus";
+import { StatusEnum } from "../../enums/dashboard/ProjectStatus";
 
 interface ProjectDetailsInterface {
   project: string;
