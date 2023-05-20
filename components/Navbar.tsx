@@ -47,7 +47,7 @@ const Navbar = ({
         {/* Navbar Links */}
         <ul
           className={`list-none flex-row sm:gap-6 md:gap-10 lg:gap-24 grow ${
-            showNavLinks ? "sm:flex" : "hidden"
+            showNavLinks ? "sm:flex hidden" : "hidden"
           }`}
         >
           {navLinks.map((link) => {
@@ -82,7 +82,7 @@ const Navbar = ({
               animate="visible"
               exit="hidden"
               className={`fixed w-screen h-screen top-0 left-0 backdrop-blur-md z-50 ${
-                showNavLinks ? "sm:hidden" : "grid"
+                showNavLinks ? "sm:hidden grid" : "hidden"
               } grid-cols-12`}
             >
               <div className="col-start-2 col-end-12 grid place-items-center">

@@ -1,3 +1,3 @@
 import { ProjectDetailsInterface } from "../../interfaces";
 
-type ProjectDetailsInterfaceKeysType = (keyof ProjectDetailsInterface)[];
+export type ProjectDetailsInterfaceKeysType = (keyof ProjectDetailsInterface)[];
