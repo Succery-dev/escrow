@@ -14,7 +14,7 @@ import { currentSystemProblems } from "../../constants";
 import { aesthetics } from "../../constants";
 
 // Inteface Imports
-import { ProblemsInterface } from "../../interfaces/HP/currentSystemProblems";
+import { ProblemsInterface } from "../../interfaces";
 
 const CurrentSystemProblemsCard = ({
   problem,

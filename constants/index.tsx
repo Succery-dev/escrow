@@ -1,3 +1,4 @@
+// Assets Imports
 import {
   DollarDownArrow,
   Ellipse25_17,
@@ -8,9 +9,14 @@ import {
   SmartContractIcon,
 } from "../assets";
 
-import { WalthroughInterface } from "../interfaces/HP/walkthrough";
-import { ProblemsInterface } from "../interfaces/HP/currentSystemProblems";
-import { FeatureInterface } from "../interfaces/HP/featuresInteface";
+// Interfaces Imports
+import {
+  WalthroughInterface,
+  ProblemsInterface,
+  FeatureInterface,
+} from "../interfaces";
+
+// Types Imports
 import { ProjectDetailsInterfaceKeysType } from "../types";
 
 export const navLinks = [

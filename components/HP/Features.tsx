@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
 
 // Interface Imports
-import { FeatureInterface } from "../../interfaces/HP/featuresInteface";
+import { FeatureInterface } from "../../interfaces";
 
 const FeaturesCard = ({
   feature,

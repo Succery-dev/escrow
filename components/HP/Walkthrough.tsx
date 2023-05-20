@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 // Interfaces Imports
-import { WalthroughInterface } from "../../interfaces/HP/walkthrough";
+import { WalthroughInterface } from "../../interfaces";
 
 // Image Imports
 import { GradientBlueGreenArrow } from "../../assets";
