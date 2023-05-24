@@ -24,7 +24,10 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-parallax-tilt": "^1.7.137",
+<<<<<<< HEAD
     "three": "^0.152.2",
+=======
+>>>>>>> cac6e74 (add responsive HP code with animation on scroll)
     "wagmi": "^0.12.12",
     "web3": "^1.9.0"
   },
