@@ -28,6 +28,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
 import merge from "lodash.merge";
+import { FormProvider } from "../context/FormContext";
 
 const AlchemyApiKey = `${process.env.ALCHEMY_API_KEY}`;
 
@@ -70,8 +71,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains} coolMode theme={customWalletTheme}>
-          {/* <Navbar /> */}
-          <Component {...pageProps} />
+          <FormProvider>
+            {/* <Navbar /> */}
+            <Component {...pageProps} />
+          </FormProvider>
         </RainbowKitProvider>
       </WagmiConfig>
     </>

@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^0.12.10",
+    "@react-three/drei": "^9.68.6",
+    "@react-three/fiber": "^8.13.0",
+    "@types/three": "^0.152.0",
     "chart.js": "^4.3.0",
     "dotenv": "^16.0.3",
     "ethers": "^5",
@@ -21,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-parallax-tilt": "^1.7.137",
+    "three": "^0.152.2",
     "wagmi": "^0.12.12",
     "web3": "^1.9.0"
   },

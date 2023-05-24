@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
+:root {
+  --text-secondary: #d3d3d3;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "Raleway", sans-serif;
@@ -49,4 +53,19 @@ html {
     transparent 50%,
     #2563eb 100%
   );
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  filter: invert(0.8);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  filter: invert(0.3);
 }

@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { navLinks } from "../constants";
-import { logo, arrow, MenuIcon, CrossIcon } from "../assets";
-import { Glow } from "./aesthetics";
+// Constants Imports
+import { navLinks, aesthetics } from "../constants";
 
+// Assets Imports
+import { logo, arrow, MenuIcon, CrossIcon } from "../assets";
+
+// Custom Components Imports
+import { CustomButton, Glow } from "./index";
+
+// Tilt Imports
 import Tilt from "react-parallax-tilt";
 
 // Framer-Motion Imports
 import { motion, AnimatePresence } from "framer-motion";
 import { hoverVariant, modalVariant, modalLinksVariant } from "../utils/motion";
 
-import { aesthetics } from "../constants";
+// Rainbowkit Imports
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Navbar = ({

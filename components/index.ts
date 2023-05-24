@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CustomButton from "./CustomButton";
+import CanvasLoader from "./CanvasLoader";
 
 // Aesthetic Imports
 import { Glow } from "./aesthetics";
@@ -15,6 +16,12 @@ import {
 
 import { DoughnutChart, LineChart, Table } from "./dashboard";
 
+// Create-Project Components
+import { LogoCanvas, CreateProjectForm } from "./create-project";
+
+// Common Pages Imports
+import { CreateProject_ContractDetails } from "./commonPages";
+
 export {
   Navbar,
   IntroSection,
@@ -27,4 +34,8 @@ export {
   LineChart,
   Glow,
   Table,
+  CanvasLoader,
+  LogoCanvas,
+  CreateProjectForm,
+  CreateProject_ContractDetails,
 };

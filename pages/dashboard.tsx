@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 // Custom Components Imports
 import {
@@ -31,6 +32,8 @@ const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
   bgColor,
   glowStyles,
 }): JSX.Element => {
+  const router = useRouter();
+
   return (
     <motion.div
       className={`w-full grid grid-cols-12 ${bgColor} xl:py-20 sm:py-14 py-14 overflow-hidden relative xl:min-h-[1024px] lg:min-h-[760px] sm:min-h-[500px] min-h-screen`}
@@ -44,6 +47,7 @@ const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
 };
 
 const dashboard: NextPage = () => {
+  const router = useRouter();
   const [data, setData] = useState({} as ProjectDataInterface);
 
   useEffect(() => {
@@ -88,8 +92,10 @@ const dashboard: NextPage = () => {
                 Active Projects
               </motion.h1>
               <CustomButton
+                type="button"
                 text="+ Create"
                 styles="bg-[#3E8ECC] lg:text-2xl sm:text-lg rounded-md text-center text-white px-3 py-2 md:px-6 md:py-3"
+                onClick={() => router.push("/create-project")}
               />
             </div>
             {/* Charts */}
