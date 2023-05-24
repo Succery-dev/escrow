@@ -1,3 +1,4 @@
+// Assets Imports
 import {
   DollarDownArrow,
   Ellipse25_17,
@@ -8,8 +9,15 @@ import {
   SmartContractIcon,
 } from "../assets";
 
-import { WalthroughInterface } from "../interfaces/walkthrough";
-import { ProblemsInterface } from "../interfaces/currentSystemProblems";
+// Interfaces Imports
+import {
+  WalthroughInterface,
+  ProblemsInterface,
+  FeatureInterface,
+} from "../interfaces";
+
+// Types Imports
+import { ProjectDetailsInterfaceKeysType } from "../types";
 
 export const navLinks = [
   {
@@ -79,7 +87,7 @@ export const walkthrough: WalthroughInterface[] = [
   },
 ];
 
-export const features = [
+export const features: FeatureInterface[] = [
   {
     id: "Escrow",
     title: "Escrow",
@@ -259,7 +267,7 @@ export const aesthetics = {
         transform: "translate(-50%, -50%)",
       },
     ],
-    mobileNavbar: [
+    mobileNavbarGlowStyles: [
       {
         backgroundColor: "#2563EB",
         bottom: "0%",
@@ -277,5 +285,38 @@ export const aesthetics = {
         filter: "blur(125px)",
       },
     ],
+    dashboardGlowStyles: [
+      {
+        backgroundColor: "#00FFFF",
+        bottom: "10%",
+        left: "45%",
+        width: "500px",
+        height: "500px",
+        filter: "blur(500px)",
+      },
+      {
+        backgroundColor: "#2563EB",
+        top: "5%",
+        right: "55%",
+        width: "500px",
+        height: "500px",
+        filter: "blur(500px)",
+      },
+    ],
   },
 };
+
+export const chartColors: string[] = [
+  "#3E8EEC",
+  "#FFAD4E",
+  "#F1FF4E",
+  "#91FF4E",
+  "#FF634E",
+];
+
+export const projectDetailsInterfaceKeys: ProjectDetailsInterfaceKeysType = [
+  "project",
+  "deadline",
+  "amount",
+  "status",
+];

@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 import { aesthetics } from "../constants";
 
 // Inteface Imports
-import { SectionWrapperPropsInterface } from "../interfaces/sectionWrapper";
+import { SectionWrapperPropsInterface } from "../interfaces/HP/sectionWrapper";
 
 const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
   children,
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <Navbar />
+      <Navbar showNavLinks={true} showConnectBtn={false} />
       <SectionWrapper
         bgColor=" bg-bg_primary"
         glowStyles={aesthetics.glow.introSectionGlowStyles}

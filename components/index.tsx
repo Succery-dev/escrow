@@ -13,6 +13,8 @@ import {
   CurrentSystemProblems,
 } from "./HP";
 
+import { DoughnutChart, LineChart, Table } from "./dashboard";
+
 export {
   Navbar,
   IntroSection,
@@ -21,5 +23,8 @@ export {
   Walkthrough,
   CurrentSystemProblems,
   CustomButton,
+  DoughnutChart,
+  LineChart,
   Glow,
+  Table,
 };
