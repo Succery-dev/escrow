@@ -77,16 +77,12 @@ export const textVariant = () => {
   };
 };
 
-<<<<<<< HEAD
 export const fadeIn = (
   direction: string,
   duration: number,
   index?: number,
   delay?: number
 ) => {
-=======
-export const fadeIn = (direction: string, duration: number, index?: number) => {
->>>>>>> cac6e74 (add responsive HP code with animation on scroll)
   return {
     hidden: {
       x: direction === "left" ? 50 : direction === "right" ? -50 : 0,
@@ -102,10 +98,7 @@ export const fadeIn = (direction: string, duration: number, index?: number) => {
         duration: index === undefined ? duration : duration * index,
         ease: "easeOut",
         when: "beforeChildren",
-<<<<<<< HEAD
         delay: delay || 0,
-=======
->>>>>>> cac6e74 (add responsive HP code with animation on scroll)
       },
     },
   };
