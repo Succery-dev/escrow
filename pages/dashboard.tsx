@@ -43,7 +43,7 @@ const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
   );
 };
 
-const dashboard: NextPage = () => {
+const Dashboard: NextPage = () => {
   const [data, setData] = useState({} as ProjectDataInterface);
 
   useEffect(() => {
@@ -116,4 +116,4 @@ const dashboard: NextPage = () => {
   );
 };
 
-export default dashboard;
+export default Dashboard;
