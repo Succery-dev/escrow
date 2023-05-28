@@ -26,10 +26,15 @@ export const glowVariant = () => {
   };
 };
 
-export const modalVariant = () => {
+export const modalVariant = (direction?: string) => {
   return {
     hidden: {
-      x: "-100vw",
+      x:
+        direction === "left"
+          ? "100vw"
+          : direction === "right"
+          ? "-100vw"
+          : "-100vw",
       transition: {
         duration: 0.2,
       },

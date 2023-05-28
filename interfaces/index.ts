@@ -18,7 +18,13 @@ import {
   CreateProjectFieldInterface,
   CreateProjectFormInterface,
   CreateProjectFormContextInterface,
+  TypedDataDomaiInterface,
 } from "./create-project/index";
+
+import {
+  NotificationContextInterface,
+  notificationConfigurationInterface,
+} from "./NotificationContextInterface";
 
 export type {
   ProjectDataInterface,
@@ -31,4 +37,7 @@ export type {
   CreateProjectFieldInterface,
   CreateProjectFormInterface,
   CreateProjectFormContextInterface,
+  TypedDataDomaiInterface,
+  NotificationContextInterface,
+  notificationConfigurationInterface,
 };

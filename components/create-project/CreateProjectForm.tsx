@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // Interfaces Imports
 import {
@@ -10,12 +10,23 @@ import {
 import { CustomButton } from "../index";
 
 // Constants Imports
-import { createProjectFields } from "../../constants";
+import { createProjectFields, signProjectEip712 } from "../../constants";
 
 // Framer Motion Imports
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
 import { useRouter } from "next/router";
+
+// Ethers/Wagmi Imports
+import { useAccount, useSignTypedData } from "wagmi";
+import { NotificationContext } from "../../context/NotificationContext";
+
+// Assets/Image Imports
+import {
+  IconNotificationSuccess,
+  IconNotificationWarning,
+  IconNotificationError,
+} from "../../assets";
 
 const FormFields = ({
   formField,
@@ -80,6 +91,29 @@ const CreateProjectForm = ({
   form: CreateProjectFormInterface;
   setForm: React.Dispatch<React.SetStateAction<CreateProjectFormInterface>>;
 }): JSX.Element => {
+  // Notification Context
+  const context = useContext(NotificationContext);
+  const setShowNotification = context.setShowNotification;
+  const setNotificationConfiguration = context.setNotificationConfiguration;
+  // Wagmi
+  const { isConnected, address } = useAccount();
+  const {
+    signTypedDataAsync,
+    data: signedProjectDetails,
+    isSuccess,
+    isError,
+  } = useSignTypedData({
+    domain: signProjectEip712.domain,
+    types: signProjectEip712.types,
+    value: {
+      title: form.Title,
+      detail: form.Detail,
+      deadline: form["Deadline(UTC)"],
+      reward: form["Reward(USDC)"],
+      lancerAddress: form["Lancer's Wallet Address"],
+    },
+  });
+  // Next Router
   const router = useRouter();
   const { pathname } = router;
   // Function Update Form Field
@@ -94,6 +128,66 @@ const CreateProjectForm = ({
       [formFieldtitle as keyof typeof form]: e.target.value,
     });
   };
+
+  const signProjectDetails = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      await signTypedDataAsync();
+      setNotificationConfiguration({
+        modalColor: "#62d140",
+        title: "Success",
+        message: "Message Signed!",
+        icon: IconNotificationSuccess,
+      });
+      setShowNotification(true);
+    } catch (error) {
+      if (String(error).includes("invalid address")) {
+        setNotificationConfiguration({
+          modalColor: "#d1d140",
+          title: "Invalid Address",
+          message: "Invalid Address for signing Project Details!",
+          icon: IconNotificationWarning,
+        });
+        setShowNotification(true);
+      } else if (String(error).includes("UserRejectedRequestError")) {
+        setNotificationConfiguration({
+          modalColor: "#d14040",
+          title: "Rejected",
+          message: "Rejected Sigining Project Details",
+          icon: IconNotificationError,
+        });
+        setShowNotification(true);
+        console.log(error);
+      } else {
+        setNotificationConfiguration({
+          modalColor: "#d14040",
+          title: "Error",
+          message: "Some error signing the Project Detials",
+          icon: IconNotificationError,
+        });
+        setShowNotification(true);
+      }
+    }
+    // if (isConnected && address === form["Lancer's Wallet Address"]) {
+    //   await signTypedDataAsync();
+    //   if (isSuccess) {
+
+    //   } else if (isError) {
+
+    //   } else {
+    //     return;
+    //   }
+    // } else {
+    //   console.log("Invalid Singing Address");
+    //   setNotificationConfiguration({
+    //     textColor: "#d1d140",
+    //     title: "Invalid Address",
+    //     message: "Invalid Address for signing Project Details!",
+    //   });
+    //   setShowNotification(true);
+    // }
+  };
+
   return (
     // Form Wrapper
     <motion.div
@@ -129,6 +223,7 @@ const CreateProjectForm = ({
                     index={index}
                     form={form}
                     updateFormField={updateFormField}
+                    key={index}
                   />
                 )
               );
@@ -139,6 +234,7 @@ const CreateProjectForm = ({
                   index={index}
                   form={form}
                   updateFormField={updateFormField}
+                  key={index}
                 />
               );
             } else return null;
@@ -177,6 +273,13 @@ const CreateProjectForm = ({
                 onClick={(e) => {
                   e.preventDefault();
                 }}
+              />
+              {/* Verify and Confirm Button */}
+              <CustomButton
+                text="Confirm"
+                styles="bg-[#d14040] rounded-md text-center text-lg font-semibold text-white py-[4px] px-7 hover:bg-[#d13131]"
+                type="submit"
+                onClick={(e) => signProjectDetails(e)}
               />
             </div>
           ) : null}

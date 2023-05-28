@@ -2,10 +2,15 @@ import React from "react";
 import type { NextPage } from "next";
 
 // Interfaces Imports
-import { CreateProject_ContractDetails } from "../components";
+import { CreateProject_ContractDetails, Notification } from "../components";
 
 const ContractDetails: NextPage = () => {
-  return <CreateProject_ContractDetails />;
+  return (
+    <div>
+      <Notification />
+      <CreateProject_ContractDetails />
+    </div>
+  );
 };
 
 export default ContractDetails;

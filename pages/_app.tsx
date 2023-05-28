@@ -29,6 +29,7 @@ import type { AppProps } from "next/app";
 
 import merge from "lodash.merge";
 import { FormProvider } from "../context/FormContext";
+import { NotificationContextProvider } from "../context/NotificationContext";
 
 const AlchemyApiKey = `${process.env.ALCHEMY_API_KEY}`;
 
@@ -72,8 +73,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains} coolMode theme={customWalletTheme}>
           <FormProvider>
-            {/* <Navbar /> */}
-            <Component {...pageProps} />
+            <NotificationContextProvider>
+              {/* <Navbar /> */}
+              <Component {...pageProps} />
+            </NotificationContextProvider>
           </FormProvider>
         </RainbowKitProvider>
       </WagmiConfig>

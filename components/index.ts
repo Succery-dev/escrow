@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CustomButton from "./CustomButton";
 import CanvasLoader from "./CanvasLoader";
+import Notification from "./Notification";
 
 // Aesthetic Imports
 import { Glow } from "./aesthetics";
@@ -38,4 +39,5 @@ export {
   LogoCanvas,
   CreateProjectForm,
   CreateProject_ContractDetails,
+  Notification,
 };

@@ -15,10 +15,14 @@ import {
   ProblemsInterface,
   FeatureInterface,
   CreateProjectFieldInterface,
+  TypedDataDomaiInterface,
 } from "../interfaces";
 
 // Types Imports
 import { ProjectDetailsInterfaceKeysType } from "../types";
+
+// Ethers/Wagmi Imports
+import { ethers } from "ethers";
 
 export const navLinks = [
   {
@@ -369,3 +373,19 @@ export const createProjectFields: CreateProjectFieldInterface[] = [
     type: "string",
   },
 ];
+
+export const signProjectEip712: TypedDataDomaiInterface = {
+  domain: {
+    name: "QubePay-Sign-Project",
+    chainId: ethers.BigNumber.from(5).toHexString(),
+  },
+  types: {
+    ProjectStruct: [
+      { name: "title", type: "string" },
+      { name: "detail", type: "string" },
+      { name: "deadline", type: "string" },
+      { name: "reward", type: "uint256" },
+      { name: "lancerAddress", type: "address" },
+    ],
+  },
+};
