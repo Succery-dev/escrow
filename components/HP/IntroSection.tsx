@@ -15,10 +15,11 @@ const IntroHeaderSection = (): JSX.Element => (
     viewport={{ once: true, amount: 0.25 }}
     className=" xl:text-7xl lg:text-6xl md:text-5xl sm:text-5xl text-4xl font-extrabold"
   >
-    <p className=" block">
+    {/* <p className=" block">
       Build <span className="linear-blue-green-gradient">Trust</span> between
     </p>
-    <p className=" block">Freelancers and Clients</p>
+    <p className=" block">Freelancers and Clients</p> */}
+    <p className="block">Streamlining <span className="linear-blue-green-gradient">Collaborative Potential</span> through Decentralized Outsourcing and Task Management</p>
   </motion.h1>
 );
 
@@ -33,7 +34,7 @@ const IntroFooterSection = (): JSX.Element => (
     >
       <p className="block">The ultimate DApp enabling</p>
       <p className="block">payments and delivery of</p>
-      <p className="block">freelance work using smart contract</p>
+      <p className="block">freelancer work using smart contract</p>
     </motion.h3>
     <CustomButton
       text="Join Waitlist"

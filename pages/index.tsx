@@ -10,6 +10,7 @@ import {
   Navbar,
   Walkthrough,
   Glow,
+  Support,
 } from "../components";
 
 // Framer-Motion Imports
@@ -19,7 +20,7 @@ import { motion } from "framer-motion";
 import { aesthetics } from "../constants";
 
 // Inteface Imports
-import { SectionWrapperPropsInterface } from "../interfaces/sectionWrapper";
+import { SectionWrapperPropsInterface } from "../interfaces/HP/sectionWrapper";
 
 const SectionWrapper: React.FC<SectionWrapperPropsInterface> = ({
   children,
@@ -42,14 +43,14 @@ const Home: NextPage = () => {
   return (
     <div className="font-nunito text-secondary">
       <Head>
-        <title>QubePay</title>
+        <title>Qube</title>
         <meta
           name="description"
-          content="Empowering relation between Freelancers and Organizations"
+          content="The best tool for all of your outsourcing task management which improves your working quality."
         />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <Navbar />
+      <Navbar showNavLinks={true} showConnectBtn={false} />
       <SectionWrapper
         bgColor=" bg-bg_primary"
         glowStyles={aesthetics.glow.introSectionGlowStyles}
@@ -75,6 +76,11 @@ const Home: NextPage = () => {
         glowStyles={aesthetics.glow.featuresGlowStyles}
       >
         <Features />
+      </SectionWrapper>
+
+      {/* Support */}
+      <SectionWrapper bgColor="bg-bg_primary" glowStyles={[]}>
+        <Support />
         {/* Footer */}
         <Footer />
       </SectionWrapper>

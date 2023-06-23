@@ -14,7 +14,7 @@ import { currentSystemProblems } from "../../constants";
 import { aesthetics } from "../../constants";
 
 // Inteface Imports
-import { ProblemsInterface } from "../../interfaces/currentSystemProblems";
+import { ProblemsInterface } from "../../interfaces";
 
 const CurrentSystemProblemsCard = ({
   problem,
@@ -37,17 +37,18 @@ const CurrentSystemProblemsCard = ({
         <Image
           src={problem.image}
           alt="70%"
+          width="200"
           className="xl:h-[200px] lg:h-[150px] sm:h-[100px] h-[150px]"
         />
       </div>
       <p className="font-extrabold xl:text-3xl lg:text-2xl sm:text-xl text-xl grow sm:w-full w-2/3">
         {problem.description.main}
       </p>
-      <Link href="/">
+      {/* <Link href="/">
         <p className="font-normal xl:text-xl lg:text-lg md:text-sm">
           {problem.description.footer}
         </p>
-      </Link>
+      </Link> */}
     </motion.div>
   );
 };
@@ -62,7 +63,7 @@ const CurrentSystemProblems = (): JSX.Element => {
         viewport={{ once: true, amount: 0.25 }}
         className=" xl:text-7xl lg:text-6xl md:text-4xl sm:text-4xl text-4xl font-extrabold"
       >
-        Why QubePay
+        With Qube
       </motion.h1>
       <div className="sm:flex sm:flex-row justify-between lg:mt-32 sm:mt-16">
         {currentSystemProblems.map(

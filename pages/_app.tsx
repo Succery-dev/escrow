@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   RainbowKitProvider,
   Theme,
-  lightTheme,
   connectorsForWallets,
+  darkTheme,
 } from "@rainbow-me/rainbowkit";
 import {
   rainbowWallet,
@@ -31,45 +31,49 @@ import merge from "lodash.merge";
 
 const AlchemyApiKey = `${process.env.ALCHEMY_API_KEY}`;
 
-const { chains, provider } = configureChains(
-  [goerli, sepolia, polygonMumbai, localhost, gnosis],
-  [alchemyProvider({ apiKey: AlchemyApiKey }), publicProvider()]
-);
+// const { chains, provider } = configureChains(
+//   [goerli, sepolia, polygonMumbai, localhost, gnosis],
+//   [alchemyProvider({ apiKey: AlchemyApiKey }), publicProvider()]
+// );
 
-const connectors = connectorsForWallets([
-  {
-    groupName: "Recommended",
-    wallets: [
-      metaMaskWallet({ chains }),
-      safeWallet({ chains }),
-      rainbowWallet({ chains }),
-      walletConnectWallet({ chains }),
-      imTokenWallet({ chains }),
-    ],
-  },
-]);
+// const connectors = connectorsForWallets([
+//   {
+//     groupName: "Recommended",
+//     wallets: [
+//       metaMaskWallet({ chains }),
+//       safeWallet({ chains }),
+//       rainbowWallet({ chains }),
+//       walletConnectWallet({ chains }),
+//       imTokenWallet({ chains }),
+//     ],
+//   },
+// ]);
 
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-});
+// const wagmiClient = createClient({
+//   autoConnect: true,
+//   connectors,
+//   provider,
+// });
 
-const customWalletTheme: Theme = merge(lightTheme(), {
-  colors: {
-    accentColor: "#3E8EEC",
-  },
-} as Theme);
+// const customWalletTheme: Theme = merge(darkTheme(), {
+//   colors: {
+//     accentColor: "#3E8EEC",
+//     connectButtonBackground: "black",
+//     connectButtonBackgroundError: "black",
+//     connectButtonInnerBackground: "black",
+//     modalBackground: "black",
+//   },
+// } as Theme);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <WagmiConfig client={wagmiClient}>
-        <RainbowKitProvider chains={chains} coolMode theme={customWalletTheme}>
+      {/* <WagmiConfig client={wagmiClient}> */}
+        {/* <RainbowKitProvider chains={chains} coolMode theme={customWalletTheme}> */}
           {/* <Navbar /> */}
           <Component {...pageProps} />
-        </RainbowKitProvider>
-      </WagmiConfig>
+        {/* </RainbowKitProvider> */}
+      {/* </WagmiConfig> */}
     </>
   );
 }

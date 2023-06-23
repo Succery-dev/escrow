@@ -11,7 +11,10 @@ import {
   Features,
   Walkthrough,
   CurrentSystemProblems,
+  Support,
 } from "./HP";
+
+import { DoughnutChart, LineChart, Table } from "./dashboard";
 
 export {
   Navbar,
@@ -21,5 +24,9 @@ export {
   Walkthrough,
   CurrentSystemProblems,
   CustomButton,
+  DoughnutChart,
+  LineChart,
   Glow,
+  Table,
+  Support,
 };
