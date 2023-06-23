@@ -10,6 +10,7 @@ import {
   Navbar,
   Walkthrough,
   Glow,
+  Support,
 } from "../components";
 
 // Framer-Motion Imports
@@ -75,6 +76,11 @@ const Home: NextPage = () => {
         glowStyles={aesthetics.glow.featuresGlowStyles}
       >
         <Features />
+      </SectionWrapper>
+
+      {/* Support */}
+      <SectionWrapper bgColor="bg-bg_primary" glowStyles={[]}>
+        <Support />
         {/* Footer */}
         <Footer />
       </SectionWrapper>

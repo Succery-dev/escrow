@@ -11,6 +11,7 @@ import {
   Features,
   Walkthrough,
   CurrentSystemProblems,
+  Support,
 } from "./HP";
 
 import { DoughnutChart, LineChart, Table } from "./dashboard";
@@ -27,4 +28,5 @@ export {
   LineChart,
   Glow,
   Table,
+  Support,
 };
