@@ -15,10 +15,11 @@ const IntroHeaderSection = (): JSX.Element => (
     viewport={{ once: true, amount: 0.25 }}
     className=" xl:text-7xl lg:text-6xl md:text-5xl sm:text-5xl text-4xl font-extrabold"
   >
-    <p className=" block">
+    {/* <p className=" block">
       Build <span className="linear-blue-green-gradient">Trust</span> between
     </p>
-    <p className=" block">Freelancers and Clients</p>
+    <p className=" block">Freelancers and Clients</p> */}
+    <p className="block">The best tool for all of your outsourcing task management which improves your working quality.</p>
   </motion.h1>
 );
 

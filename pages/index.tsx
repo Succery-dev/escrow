@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         <title>Qube</title>
         <meta
           name="description"
-          content="Empowering relation between Freelancers and Organizations"
+          content="The best tool for all of your outsourcing task management which improves your working quality."
         />
         <link rel="icon" href="/logo.png" />
       </Head>
