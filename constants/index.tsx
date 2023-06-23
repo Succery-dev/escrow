@@ -10,6 +10,7 @@ import {
   One2one,
   Community,
   Api,
+  Nft,
 } from "../assets";
 
 // Interfaces Imports
@@ -113,11 +114,11 @@ export const features: FeatureInterface[] = [
       "Generate a direct link of a contract describing the project and its payment details to share on any platform",
   },
   {
-    id: "SmartContract",
-    title: "Smart Contract",
-    image: SmartContractIcon,
+    id: "NFTGateway",
+    title: "NFT Gateway",
+    image: Nft,
     description:
-      "Qube has a protocol stored in the blockchain. Thus it's transparent and trustworthy. No middleman is involved.",
+      "With the gateway function provided by nfts, only specific individuals, such as community members, can undertake the tasks",
   },
 ];
 
