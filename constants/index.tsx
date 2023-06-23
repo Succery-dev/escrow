@@ -36,6 +36,10 @@ export const navLinks = [
     id: "features",
     title: "Features",
   },
+  {
+    id: "support",
+    title: "Support",
+  }
 ];
 
 export const currentSystemProblems: ProblemsInterface[] = [
@@ -137,6 +141,21 @@ export const footerLinks = [
     id: "2023_SUCCERY_FZCO",
     title: "© 2023 SUCCERY FZCO",
     link: "/",
+  },
+];
+
+export const support = [
+  {
+    id: "DJT",
+    name: "doublejump.tokyo Inc.",
+    image: "/djt.jpg",
+    hp: "https://www.doublejump.tokyo/en",
+  },
+  {
+    id: "gumi",
+    name: "gumi Inc.",
+    image: "/gumi.jpg",
+    hp: "https://gu3.co.jp/en/",
   },
 ];
 
