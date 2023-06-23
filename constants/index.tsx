@@ -96,7 +96,7 @@ export const features: FeatureInterface[] = [
     title: "Escrow",
     image: EscrowIcon,
     description:
-      "Qube will hold the hiring company’s money until the company get satisfied with the work and pay the freelancer ",
+      "Qube will hold the hiring company’s money until the company get satisfied with the work and pay the freelancer using smart contract",
   },
   {
     id: "Arbitration",
