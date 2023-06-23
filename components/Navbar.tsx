@@ -39,7 +39,7 @@ const Navbar = ({
               className=" rounded-md xl:h-[50px] lg:h-[45px] sm:h-[40px] xs:h-[40px] h-[30px] w-auto"
             />
             <h1 className=" xl:text-2xl lg:text-xl sm:text-lg xs:text-2xl text-xl text-primary font-extrabold lg:ml-4 sm:ml-0">
-              QubePay
+              Qube
             </h1>
           </Link>
         </motion.div>
