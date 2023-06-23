@@ -19,7 +19,7 @@ const IntroHeaderSection = (): JSX.Element => (
       Build <span className="linear-blue-green-gradient">Trust</span> between
     </p>
     <p className=" block">Freelancers and Clients</p> */}
-    <p className="block">Streamlining <span className="linear-blue-green-gradient">Collaborative Potential</span> through Decentralized Outsourcing and Task Management</p>
+    <p className="block">Streamlining <span className="linear-blue-green-gradient">Collaborative Potential</span></p>
   </motion.h1>
 );
 
