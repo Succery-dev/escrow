@@ -42,7 +42,7 @@ const Home: NextPage = () => {
   return (
     <div className="font-nunito text-secondary">
       <Head>
-        <title>QubePay</title>
+        <title>Qube</title>
         <meta
           name="description"
           content="Empowering relation between Freelancers and Organizations"
