@@ -122,7 +122,7 @@ export const features: FeatureInterface[] = [
     title: "NFT Gateway",
     image: Nft,
     description:
-      "With the gateway function provided by nfts, only specific individuals, such as community members, can undertake the tasks",
+      "With the gateway function provided by nfts, only specific individuals, such as NFT holder, can undertake the tasks",
   },
 ];
 
