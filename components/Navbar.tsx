@@ -34,8 +34,10 @@ const Navbar = ({
         <motion.div variants={hoverVariant()} whileHover={"hover"}>
           <Link href="/" className="flex items-center sm:gap-2 xs:gap-4 gap-2">
             <Image
-              src={logo}
-              alt="QP"
+              src="/logo.png"
+              alt="Q"
+              width="100"
+              height="100"
               className=" rounded-md xl:h-[50px] lg:h-[45px] sm:h-[40px] xs:h-[40px] h-[30px] w-auto"
             />
             <h1 className=" xl:text-2xl lg:text-xl sm:text-lg xs:text-2xl text-xl text-primary font-extrabold lg:ml-4 sm:ml-0">
