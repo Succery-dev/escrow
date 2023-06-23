@@ -138,9 +138,9 @@ const Navbar = ({
           onClick={toggleMobileNav}
         />
         {/* Connect Button */}
-        <div className={`${showConnectBtn ? "block" : "hidden"}`}>
+        {/* <div className={`${showConnectBtn ? "block" : "hidden"}`}>
           <ConnectButton accountStatus={{ smallScreen: "avatar" }} />
-        </div>
+        </div> */}
       </div>
     </nav>
   );
