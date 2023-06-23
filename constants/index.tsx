@@ -73,20 +73,20 @@ export const walkthrough: WalthroughInterface[] = [
   {
     id: "walkthrough-1",
     description:
-      "Clients easily create custom smart contracts with the lancer’s wallet address",
+      "Clients easily create custom smart contracts with the freelancer’s wallet address",
   },
   {
     id: "walkthrough-2",
-    description: "Lancer reviews and signs the contract",
+    description: "Freelancer reviews and signs the contract",
   },
   {
     id: "walkthrough-3",
     description:
-      "Client sends the amount to an Escrow account mutually owned by lancer and Client",
+      "Client sends the amount to an Escrow account mutually owned by freelancer and Client",
   },
   {
     id: "walkthrough-4",
-    description: "Auto payment to lancer on completing the task",
+    description: "Auto payment to freelancer on completing the task",
   },
   {
     id: "walkthrough-5",
@@ -108,7 +108,7 @@ export const features: FeatureInterface[] = [
     title: "Arbitration",
     image: JuryIcon,
     description:
-      "If there is any disagreement between the hiring party and lancers, we will provide dispute resolution",
+      "If there is any disagreement between the hiring party and freelancers, we will provide dispute resolution",
   },
   {
     id: "LinkBased",
