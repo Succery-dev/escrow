@@ -11,8 +11,16 @@ import SmartContractIcon from "./Smartcontract-Icon.svg";
 import TwitterIcon from "./Twitter-Icon.svg";
 import MenuIcon from "./Icon-Hamburger-Menu.svg";
 import CrossIcon from "./Icon-Cross.svg";
+import One2one from "./one2one.svg";
+import Community from "./community.svg";
+import Api from "./api.svg";
+import Nft from "./nft.svg";
 
 export {
+  One2one,
+  Community,
+  Api,
+  Nft,
   arrow,
   logo,
   Ellipse70,

@@ -7,6 +7,9 @@ import {
   JuryIcon,
   LinkIcon,
   SmartContractIcon,
+  One2one,
+  Community,
+  Api,
 } from "../assets";
 
 // Interfaces Imports
@@ -37,25 +40,25 @@ export const navLinks = [
 export const currentSystemProblems: ProblemsInterface[] = [
   {
     id: "70%nonPayment",
-    image: Ellipse70,
+    image: One2one,
     description: {
-      main: "70% of freelancers have experienced nonpayment or late payment at some point",
+      main: "You can securely conduct transactions using Qube, even when dealing with anonymous individuals.",
       footer: "study by the Freelancers Union",
     },
   },
   {
     id: "$5985Loss",
-    image: DollarDownArrow,
+    image: Community,
     description: {
-      main: "An Average freelancer loses $5,968 per year due to nonpayment or late payment",
+      main: "Not only can Qube be used for one-on-one transactions, but it is also suitable for assigning tasks to community members.",
       footer: "study by the Freelancers Union",
     },
   },
   {
     id: "25%-17%Scam",
-    image: Ellipse25_17,
+    image: Api,
     description: {
-      main: "25% freelancers and 17% clients reported that they had been scammed",
+      main: "With Qube's developer tools, anyone will be able to easily build applications similar to Qube. (Coming soon)",
       footer: "Report by freelancer.com 2019",
     },
   },
